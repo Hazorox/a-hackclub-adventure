@@ -1,5 +1,122 @@
 [gd_scene format=3 uid="uid://cg001aqyetlia"]
 
+[ext_resource type="Texture2D" uid="uid://pbetg0m6edfw" path="res://assets/hc.webp" id="1_0ebjn"]
+[ext_resource type="Script" uid="uid://cywpv2tu24bh8" path="res://scenes/main_menu/main_menu.gd" id="1_uqeha"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/title.otf" id="2_ob46e"]
+[ext_resource type="Texture2D" uid="uid://dem12vkmkcomo" path="res://assets/orph.png" id="2_wem23"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
+font = ExtResource("2_ob46e")
+font_size = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
+bg_color = Color(0.9372549, 0.27058825, 0.29803923, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(1, 0, 0.34117648, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ob46e"]
+bg_color = Color(1, 0, 0.34117648, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.7679558, 0, 0.25402173, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqeha"]
+bg_color = Color(1, 0, 0.34117648, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.7343664, 0, 0.24140877, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wem23"]
+bg_color = Color(1, 0.37684283, 0.46827728, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.90442955, 0, 0.30526802, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ebjn"]
+bg_color = Color(0.2, 0.5568628, 0.85490197, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.07956133, 0.35737598, 0.5758758, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0hvcy"]
+bg_color = Color(0.31962577, 0.6453004, 0.9347979, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.12324823, 0.45567477, 0.72137153, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr8j5"]
+bg_color = Color(0.16328335, 0.5162796, 0.8049645, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.10161323, 0.4119751, 0.65784943, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t61q"]
+bg_color = Color(0.16470589, 0.5176471, 0.8039216, 1)
+border_color = Color(0.09987382, 0.4080385, 0.6520149, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
 [node name="MainMenu" type="Control" unique_id=1078224139]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +124,91 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uqeha")
+
+[node name="canvas" type="CanvasLayer" parent="." unique_id=1734545742]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="canvas" unique_id=1568006770]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="canvas" unique_id=940056872]
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 364.0
+offset_bottom = 192.0
+texture = ExtResource("2_wem23")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="canvas" unique_id=504868234]
+offset_left = 295.0
+offset_top = 225.0
+offset_right = 423.0
+offset_bottom = 353.0
+texture = ExtResource("1_0ebjn")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="." unique_id=1864030521]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -487.0
+offset_top = 237.0
+offset_right = 497.0
+offset_bottom = 341.0
+grow_horizontal = 2
+text = "A              Adventure"
+label_settings = SubResource("LabelSettings_nfrx5")
+
+[node name="vsplit" type="VSplitContainer" parent="." unique_id=1871361275]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 36
+dragging_enabled = false
+
+[node name="start" type="Button" parent="vsplit" unique_id=842120058]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.99215686, 0.6784314, 0.65882355, 1)
+theme_override_colors/font_pressed_color = Color(0.9609415, 0.32306305, 0.335561, 1)
+theme_override_colors/font_hover_color = Color(0.99215686, 0.6784314, 0.65882355, 1)
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_nfrx5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ob46e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uqeha")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wem23")
+text = "START"
+
+[node name="opt" type="Button" parent="vsplit" unique_id=369383602]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.76117325, 0.87597364, 0.9884402, 1)
+theme_override_colors/font_pressed_color = Color(0.5120767, 0.74876285, 0.9726141, 1)
+theme_override_colors/font_hover_color = Color(0.5137255, 0.7490196, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_0ebjn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "OPTIONS"
