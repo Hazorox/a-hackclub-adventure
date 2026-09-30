@@ -237,7 +237,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0ebjn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
-text = "FULLSCREEN ON"
+text = "FULLSCREEN OFF"
 script = SubResource("GDScript_0hvcy")
 
 [node name="Ui" parent="." unique_id=954923791 instance=ExtResource("5_wem23")]

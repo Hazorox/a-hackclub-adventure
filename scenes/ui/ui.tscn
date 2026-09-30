@@ -213,5 +213,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_4kltc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hl07w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_swkix")
 theme_override_styles/focus = SubResource("StyleBoxFlat_hc5d0")
-text = "FULLSCREEN ON"
+text = "FULLSCREEN OFF"
 script = SubResource("GDScript_n3vwu")
