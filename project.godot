@@ -12,12 +12,33 @@ config_version=5
 
 config/name="A Hackclub Adventure"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://d21da5wlx3ajf"
+
+[autoload]
+
+BetterTerrain="*uid://dx3fwj5y8pvnq"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+window/size/borderless=true
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/better-tile-editor/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "yellow",
+"res://assets/": "blue",
+"res://resources/": "purple",
+"res://scenes/": "green",
+"res://scripts/": "red"
+}
 
 [physics]
 
@@ -25,4 +46,5 @@ window/stretch/aspect="expand"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
