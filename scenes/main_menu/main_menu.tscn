@@ -3,7 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://pbetg0m6edfw" path="res://assets/hc.webp" id="1_0ebjn"]
 [ext_resource type="Script" uid="uid://cywpv2tu24bh8" path="res://scenes/main_menu/main_menu.gd" id="1_uqeha"]
 [ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="2_ob46e"]
+[ext_resource type="Texture2D" uid="uid://bg8e68udt6d6c" path="res://assets/bg.png" id="2_3ovsr"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/title.otf" id="2_ob46e"]
 [ext_resource type="Texture2D" uid="uid://dem12vkmkcomo" path="res://assets/orph.png" id="2_wem23"]
+[ext_resource type="PackedScene" uid="uid://o2nuarbirlio" path="res://scenes/ui/ui.tscn" id="5_wem23"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
 font = ExtResource("2_ob46e")
@@ -65,6 +68,15 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 corner_detail = 4
 
+[sub_resource type="GDScript" id="GDScript_nfrx5"]
+script/source = "extends Button
+func _ready()->void:
+	pressed.connect(start)
+
+func start()->void:
+	get_tree().change_scene_to_file(\"res:://scenes/main_game/game.tscn\")
+"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ebjn"]
 bg_color = Color(0.2, 0.5568628, 0.85490197, 1)
 border_width_left = 16
@@ -117,6 +129,20 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 corner_detail = 4
 
+[sub_resource type="GDScript" id="GDScript_0hvcy"]
+script/source = "extends Button
+var fullscreen :=false
+func on_opt_pressed()->void:
+	if fullscreen:
+		fullscreen = false
+		text = \"FULLSCREEN OFF\"
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		fullscreen = true
+		text = \"FULLSCREEN ON\"
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+"
+
 [node name="MainMenu" type="Control" unique_id=1078224139]
 layout_mode = 3
 anchors_preset = 15
@@ -124,18 +150,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uqeha")
 
 [node name="canvas" type="CanvasLayer" parent="." unique_id=1734545742]
 layer = -1
 
-[node name="ColorRect" type="ColorRect" parent="canvas" unique_id=1568006770]
+[node name="ColorRect" type="TextureRect" parent="canvas" unique_id=1593857562]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.5019608)
+texture = ExtResource("2_3ovsr")
 metadata/_edit_lock_ = true
 
 [node name="TextureRect2" type="TextureRect" parent="canvas" unique_id=940056872]
@@ -174,14 +199,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
+offset_left = -218.5
 offset_top = 30.0
-offset_right = 200.0
-offset_bottom = 286.0
+offset_right = 218.5
+offset_bottom = 296.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 36
+split_offsets = PackedInt32Array(13)
 dragging_enabled = false
+split_offset = 13
 
 [node name="start" type="Button" parent="vsplit" unique_id=842120058]
 layout_mode = 2
@@ -197,6 +224,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ob46e")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uqeha")
 theme_override_styles/focus = SubResource("StyleBoxFlat_wem23")
 text = "START"
+script = SubResource("GDScript_nfrx5")
 
 [node name="opt" type="Button" parent="vsplit" unique_id=369383602]
 layout_mode = 2
@@ -206,9 +234,13 @@ theme_override_colors/font_focus_color = Color(0.76117325, 0.87597364, 0.9884402
 theme_override_colors/font_pressed_color = Color(0.5120767, 0.74876285, 0.9726141, 1)
 theme_override_colors/font_hover_color = Color(0.5137255, 0.7490196, 0.972549, 1)
 theme_override_fonts/font = ExtResource("2_ob46e")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_0ebjn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
-text = "OPTIONS"
+text = "FULLSCREEN OFF"
+script = SubResource("GDScript_0hvcy")
+
+[node name="Ui" parent="." unique_id=954923791 instance=ExtResource("5_wem23")]
+layout_mode = 1
