@@ -9,7 +9,7 @@ radius = 9.003471
 radius = 17.0
 
 [node name="Npc" type="CharacterBody2D" unique_id=2062938148]
-scale = Vector2(4, 4)
+scale = Vector2(1.2, 1.2)
 script = ExtResource("1_4tm60")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=192622117]
