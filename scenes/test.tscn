@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://2yeggg0fdvh2"]
+
+[ext_resource type="PackedScene" uid="uid://dyq4dosoaidih" path="res://scenes/characters/npc/npc.tscn" id="1_bl13t"]
+[ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="2_iyx0m"]
+
+[sub_resource type="GDScript" id="GDScript_74lek"]
+script/source = "extends RefCounted
+func run(npc:CharacterBody2D,player:CharacterBody2D):
+	print(\"INTERACTED\",\"\\n\",npc,\"\\n\",player)
+"
+
+[sub_resource type="GDScript" id="GDScript_4tm60"]
+script/source = "extends RefCounted
+func run(npc,player):
+	print(\"RAN ONCE\")
+"
+
+[node name="Test" type="Node2D" unique_id=1022116492]
+
+[node name="Npc" parent="." unique_id=2062938148 instance=ExtResource("1_bl13t")]
+position = Vector2(343, 254)
+on_interact = SubResource("GDScript_74lek")
+once_near = SubResource("GDScript_4tm60")
+
+[node name="Player" parent="." unique_id=1882750258 instance=ExtResource("2_iyx0m")]
+position = Vector2(1008, 349)

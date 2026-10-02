@@ -18,6 +18,7 @@ config/icon="uid://d21da5wlx3ajf"
 [autoload]
 
 BetterTerrain="*uid://dx3fwj5y8pvnq"
+Globals="*uid://boj1de3u456do"
 
 [display]
 
