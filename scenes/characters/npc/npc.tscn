@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d0lmfur8bn7hb" path="res://scenes/characters/npc/npc.gd" id="1_4tm60"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 9.003471
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hvcy"]
 radius = 17.0
