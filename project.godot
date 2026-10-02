@@ -21,8 +21,8 @@ BetterTerrain="*uid://dx3fwj5y8pvnq"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/size/resizable=false
 window/size/borderless=true
 window/size/window_width_override=1280
@@ -42,6 +42,11 @@ folder_colors={
 "res://scenes/": "green",
 "res://scripts/": "red"
 }
+
+[global_group]
+
+player=""
+player_interaction=""
 
 [gui]
 

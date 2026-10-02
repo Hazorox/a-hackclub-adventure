@@ -18,3 +18,4 @@ func _physics_process(delta: float) -> void:
 			sprite.play("left")
 		else:
 			sprite.play("idle")
+	
