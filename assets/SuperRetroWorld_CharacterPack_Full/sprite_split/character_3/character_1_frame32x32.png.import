@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n7mhym1cwmmv"
-path="res://.godot/imported/character_3_frame16x20.png-3bb2e7f739879ad3f8c13d0b6c75617f.ctex"
+uid="uid://cpxjvvq58meqp"
+path="res://.godot/imported/character_1_frame32x32.png-2400d85592b95c1ee03e6da50f1ebbb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_3/character_3_frame16x20.png"
-dest_files=["res://.godot/imported/character_3_frame16x20.png-3bb2e7f739879ad3f8c13d0b6c75617f.ctex"]
+source_file="res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_3/character_1_frame32x32.png"
+dest_files=["res://.godot/imported/character_1_frame32x32.png-2400d85592b95c1ee03e6da50f1ebbb5.ctex"]
 
 [params]
 

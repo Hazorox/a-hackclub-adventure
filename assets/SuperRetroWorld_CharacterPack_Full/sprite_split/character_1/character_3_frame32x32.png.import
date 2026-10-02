@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dija5eytcpmyk"
-path="res://.godot/imported/character_3_frame32x32.png-d663ce68513a617c9ab1bd363ff4ae9c.ctex"
+path="res://.godot/imported/character_3_frame32x32.png-434c642250307068573b77e25cad48a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_3/character_3_frame32x32.png"
-dest_files=["res://.godot/imported/character_3_frame32x32.png-d663ce68513a617c9ab1bd363ff4ae9c.ctex"]
+source_file="res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_1/character_3_frame32x32.png"
+dest_files=["res://.godot/imported/character_3_frame32x32.png-434c642250307068573b77e25cad48a5.ctex"]
 
 [params]
 
