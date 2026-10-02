@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://did26kwowqjgl"]
+
+[ext_resource type="FontFile" uid="uid://c5aysy3aic3rd" path="res://assets/fonts/Electroharmonix.otf" id="1_ey3e0"]
+[ext_resource type="FontFile" uid="uid://dskwk2qw2bidm" path="res://assets/fonts/Dedicool.ttf" id="2_sbv0p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7wsd"]
+bg_color = Color(1.037, 1.211, 0.778, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0.07058824, 0.24705882, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1600729092]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1756455059]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=616032865]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_s7wsd")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=708889069]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer" unique_id=1337627953]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=2119426737]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.89
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1226169698]
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=1899782475]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.12
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2" unique_id=880082755]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 12.6
+theme_override_constants/separation = 8
+
+[node name="start" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=1149286606]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0.07058824, 0.24705882, 1)
+theme_override_fonts/font = ExtResource("1_ey3e0")
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=2126448335]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0.07058824, 0.24705882, 1)
+theme_override_fonts/normal_font = ExtResource("2_sbv0p")
+theme_override_font_sizes/normal_font_size = 56
+text = "Placeholder"
+
+[node name="end" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=1135807721]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0.07058824, 0.24705882, 1)
+theme_override_fonts/font = ExtResource("1_ey3e0")
+theme_override_font_sizes/font_size = 32
+text = "v"

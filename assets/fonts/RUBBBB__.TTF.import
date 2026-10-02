@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://75rknm8ry731"
-path="res://.godot/imported/title.otf-8a6e3161f073395c5f8f78b109a67623.fontdata"
+uid="uid://duigmc6gesfyk"
+path="res://.godot/imported/RUBBBB__.TTF-8df8a2b3fa95892b94bd4e2d6ae723e2.fontdata"
 
 [deps]
 
-source_file="res://assets/title.otf"
-dest_files=["res://.godot/imported/title.otf-8a6e3161f073395c5f8f78b109a67623.fontdata"]
+source_file="res://assets/fonts/RUBBBB__.TTF"
+dest_files=["res://.godot/imported/RUBBBB__.TTF-8df8a2b3fa95892b94bd4e2d6ae723e2.fontdata"]
 
 [params]
 
