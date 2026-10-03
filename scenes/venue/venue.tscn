@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://j2laxkfgin8f" path="res://assets/Office tiles/Little_Bits_office_objects.png" id="6_5t7m7"]
 [ext_resource type="Texture2D" uid="uid://b3bp1jf438j0a" path="res://assets/office_assets/office_assets/all_assets.png" id="7_a0263"]
 [ext_resource type="Texture2D" uid="uid://caqg3imjqy4tb" path="res://assets/free-office-pixel-art/desk.png" id="8_ae56i"]
+[ext_resource type="Script" uid="uid://bn3tyvv2xjsnx" path="res://scenes/gather_rubbish/bin.gd" id="9_231yp"]
 [ext_resource type="PackedScene" uid="uid://dyq4dosoaidih" path="res://scenes/characters/npc/npc.tscn" id="9_a0263"]
 [ext_resource type="PackedScene" uid="uid://cuymkwx4rxacg" path="res://scenes/gather_rubbish/GarbageMode.tscn" id="10_ae56i"]
 [ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="11_yuhmj"]
+[ext_resource type="PackedScene" uid="uid://o2nuarbirlio" path="res://scenes/ui/ui.tscn" id="13_tqqrh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1355,7 +1357,7 @@ size = Vector2(73, 9)
 size = Vector2(16.125, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_231yp"]
-size = Vector2(14, 17)
+size = Vector2(9.600014, 14.450003)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqqrh"]
 size = Vector2(37, 14)
@@ -1369,15 +1371,15 @@ size = Vector2(5.5, 138)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhtkb"]
 size = Vector2(5.5, 81)
 
-[sub_resource type="GDScript" id="GDScript_ae56i"]
+[sub_resource type="GDScript" id="GDScript_yuhmj"]
 script/source = "extends RefCounted
 
-#@onready var GarbageMode:Node = $GarbageMode
 
-func run(npc:CharacterBody2D,player:CharacterBody2D)->void:
-	# RUN DIALOG
-	player.notify(\"encounter\")
-	#GarbageMode.start()
+func run(npc:CharacterBody2D,player:CharacterBody2D):
+	# DIALOGGGG
+	var garbage_mode = npc.get_parent().get_node(\"GarbageMode\")
+	if garbage_mode != null:
+		garbage_mode.start()
 "
 
 [node name="Venue" type="Node2D" unique_id=305777334]
@@ -1486,27 +1488,28 @@ position = Vector2(461, 351)
 position = Vector2(-412.9375, -312)
 shape = SubResource("RectangleShape2D_yuhmj")
 
-[node name="trash_4" type="StaticBody2D" parent="Collisions" unique_id=1187986078 groups=["trash_bin"]]
+[node name="trash_4" type="Area2D" parent="Collisions" unique_id=1708991229 groups=["trash_bin"]]
 position = Vector2(468, 351)
+script = ExtResource("9_231yp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/trash_4" unique_id=979933992]
-position = Vector2(-219.5, -17)
+position = Vector2(-220.50002, -13.999999)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_231yp")
 
-[node name="trash_2" type="StaticBody2D" parent="Collisions" unique_id=2053788904 groups=["trash_bin"]]
+[node name="trash_2" type="Area2D" parent="Collisions" unique_id=860451978 groups=["trash_bin"]]
 position = Vector2(781, 350)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/trash_2" unique_id=720322027]
-position = Vector2(-389, -324.5)
+position = Vector2(-389.50003, -326.00003)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_231yp")
 
-[node name="trash_3" type="StaticBody2D" parent="Collisions" unique_id=1239884338 groups=["trash_bin"]]
+[node name="trash_3" type="Area2D" parent="Collisions" unique_id=1856588139 groups=["trash_bin"]]
 position = Vector2(877, 350)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/trash_3" unique_id=1966729958]
-position = Vector2(-389, -326.5)
+position = Vector2(-388.50003, -331.5)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_231yp")
 
@@ -1665,12 +1668,14 @@ position = Vector2(-460, -241)
 shape = SubResource("RectangleShape2D_qhtkb")
 
 [node name="Ellie_rubbish" parent="." unique_id=2062938148 instance=ExtResource("9_a0263")]
-position = Vector2(532, 39)
+position = Vector2(558.5, 73.5)
 npc_number = 26
-on_interact = SubResource("GDScript_ae56i")
+on_interact = SubResource("GDScript_yuhmj")
 
 [node name="GarbageMode" parent="." unique_id=1061071523 instance=ExtResource("10_ae56i")]
 
 [node name="Player" parent="." unique_id=1882750258 instance=ExtResource("11_yuhmj")]
 position = Vector2(247, 162)
-scale = Vector2(1.25, 1.25)
+scale = Vector2(1, 1)
+
+[node name="Ui" parent="." unique_id=579426520 instance=ExtResource("13_tqqrh")]
