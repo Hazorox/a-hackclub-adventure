@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dem12vkmkcomo"
-path="res://.godot/imported/orph.png-2b65e653401d0ff04cefb12cdd147454.ctex"
+uid="uid://bqdgsqvhehghd"
+path="res://.godot/imported/download (1).png-8351c313dbc84c79549418d7c8bad11e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/orph.png"
-dest_files=["res://.godot/imported/orph.png-2b65e653401d0ff04cefb12cdd147454.ctex"]
+source_file="res://assets/icons/download (1).png"
+dest_files=["res://.godot/imported/download (1).png-8351c313dbc84c79549418d7c8bad11e.ctex"]
 
 [params]
 

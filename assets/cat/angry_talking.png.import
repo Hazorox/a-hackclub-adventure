@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1jj6xixt5rus"
-path="res://.godot/imported/Office.png-0bf4e0f5cf5822637ec03d730b1043ef.ctex"
+uid="uid://dj76l7aqjiykd"
+path="res://.godot/imported/angry_talking.png-423a422d72be56b1e3f7833c6ded32f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Office.png"
-dest_files=["res://.godot/imported/Office.png-0bf4e0f5cf5822637ec03d730b1043ef.ctex"]
+source_file="res://assets/cat/angry_talking.png"
+dest_files=["res://.godot/imported/angry_talking.png-423a422d72be56b1e3f7833c6ded32f7.ctex"]
 
 [params]
 
