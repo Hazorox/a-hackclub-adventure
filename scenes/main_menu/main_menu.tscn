@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="2_ob46e"]
 [ext_resource type="Texture2D" uid="uid://dem12vkmkcomo" path="res://assets/orph.png" id="2_wem23"]
 [ext_resource type="FontFile" uid="uid://c4bsxkp20340c" path="res://assets/fonts/Velocita - Italic Personal Use.otf" id="4_wem23"]
+[ext_resource type="FontFile" uid="uid://c5aysy3aic3rd" path="res://assets/fonts/Electroharmonix.otf" id="5_3ovsr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
 bg_color = Color(0.9372549, 0.27058825, 0.29803923, 1)
@@ -187,6 +188,22 @@ theme_override_fonts/font = ExtResource("4_wem23")
 theme_override_font_sizes/font_size = 106
 text = "A    ackclub 
 Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Label" unique_id=639307517]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -511.0
+offset_top = -232.0
+offset_right = 473.0
+offset_bottom = -9.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_3ovsr")
+theme_override_font_sizes/font_size = 53
+text = "AboEl5yr - Hazoro - VII"
 horizontal_alignment = 1
 vertical_alignment = 1
 
