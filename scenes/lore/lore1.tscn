@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://kjc8latnjk6k"]
+
+[ext_resource type="FontFile" uid="uid://bq0xfvi6brysg" path="res://assets/fonts/Game Paused DEMO.otf" id="1_0xqr2"]
+[ext_resource type="Texture2D" uid="uid://cd8fj4qlo42cn" path="res://assets/icons/equinox_logo.png" id="2_wnp8f"]
+[ext_resource type="Texture2D" uid="uid://d3hajkp2mvmob" path="res://assets/icons/download.png" id="3_jc3c5"]
+[ext_resource type="Texture2D" uid="uid://cn7kuxxhwgk8a" path="res://assets/icons/favicon.png" id="4_eo6de"]
+[ext_resource type="Texture2D" uid="uid://hnddsfsp666l" path="res://assets/icons/download (2).png" id="5_glrap"]
+[ext_resource type="Texture2D" uid="uid://be6yge8uxmnrg" path="res://assets/icons/download (3).png" id="6_3qdrn"]
+[ext_resource type="Texture2D" uid="uid://d1ldyemjrpwsn" path="res://assets/icons/asset2.png" id="7_fkno1"]
+[ext_resource type="Texture2D" uid="uid://dwv82v21bd26p" path="res://assets/icons/pixil-frame-0 (1).png" id="8_pwj6r"]
+
+[node name="Lore1" type="Control" unique_id=1163363819]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=16086325]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=557095087]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=597959245]
+offset_left = 58.0
+offset_top = 36.0
+offset_right = 1242.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_0xqr2")
+theme_override_font_sizes/font_size = 51
+text = "Did u know that all of this is based on a TRUE ST   RY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EquinoxLogo" type="Sprite2D" parent="CanvasLayer" unique_id=1474514393]
+position = Vector2(670, 647.00006)
+rotation = 0.14268549
+scale = Vector2(0.12294626, 0.12294626)
+texture = ExtResource("2_wnp8f")
+
+[node name="Download" type="Sprite2D" parent="CanvasLayer" unique_id=198763619]
+position = Vector2(1138, 212)
+scale = Vector2(0.50285715, 0.50285715)
+texture = ExtResource("3_jc3c5")
+
+[node name="Favicon" type="Sprite2D" parent="CanvasLayer" unique_id=1606864158]
+position = Vector2(1174, 62)
+scale = Vector2(0.16709845, 0.16709846)
+texture = ExtResource("4_eo6de")
+
+[node name="Download(2)" type="Sprite2D" parent="CanvasLayer" unique_id=1791232471]
+position = Vector2(184.99997, 395)
+rotation = 0.24868487
+scale = Vector2(0.1906858, 0.19068582)
+texture = ExtResource("5_glrap")
+
+[node name="Download(3)" type="Sprite2D" parent="CanvasLayer" unique_id=1885928852]
+position = Vector2(1093, 408.99994)
+rotation = -0.9452487
+scale = Vector2(0.48076925, 0.48076922)
+texture = ExtResource("6_3qdrn")
+
+[node name="Asset2" type="Sprite2D" parent="CanvasLayer" unique_id=850594408]
+position = Vector2(149, 173)
+scale = Vector2(0.64857143, 0.64857143)
+texture = ExtResource("7_fkno1")
+
+[node name="PixilFrame0(1)" type="Sprite2D" parent="CanvasLayer" unique_id=721429791]
+position = Vector2(676.99994, 331.99997)
+scale = Vector2(0.58528644, 0.58528644)
+texture = ExtResource("8_pwj6r")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=944441774]
+offset_left = 627.0
+offset_top = 531.0
+offset_right = 1278.0
+offset_bottom = 655.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_0xqr2")
+theme_override_font_sizes/font_size = 19
+text = "the red is cuz I don't wanna 
+show my feet"
+horizontal_alignment = 1
+vertical_alignment = 1
