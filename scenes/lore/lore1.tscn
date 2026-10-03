@@ -8,6 +8,59 @@
 [ext_resource type="Texture2D" uid="uid://be6yge8uxmnrg" path="res://assets/icons/download (3).png" id="6_3qdrn"]
 [ext_resource type="Texture2D" uid="uid://d1ldyemjrpwsn" path="res://assets/icons/asset2.png" id="7_fkno1"]
 [ext_resource type="Texture2D" uid="uid://dwv82v21bd26p" path="res://assets/icons/pixil-frame-0 (1).png" id="8_pwj6r"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="9_jc3c5"]
+[ext_resource type="Script" uid="uid://e5rtgwh3cqcc" path="res://scenes/lore/lore1.gd" id="10_eo6de"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glrap"]
+bg_color = Color(0.09667533, 0.49683473, 0.03950025, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.003921569, 0.08235294, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qdrn"]
+bg_color = Color(0.31962577, 0.6453004, 0.9347979, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.12324823, 0.45567477, 0.72137153, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkno1"]
+bg_color = Color(0.16328335, 0.5162796, 0.8049645, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.10161323, 0.4119751, 0.65784943, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwj6r"]
+bg_color = Color(0.16470589, 0.5176471, 0.8039216, 1)
+border_color = Color(0.09987382, 0.4080385, 0.6520149, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
 
 [node name="Lore1" type="Control" unique_id=1163363819]
 layout_mode = 3
@@ -95,3 +148,23 @@ text = "the red is cuz I don't wanna
 show my feet"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="lore" type="Button" parent="CanvasLayer" unique_id=714991595]
+offset_left = 41.999985
+offset_top = 436.0
+offset_right = 548.1535
+offset_bottom = 560.3106
+rotation = 0.35438725
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.76117325, 0.87597364, 0.9884402, 1)
+theme_override_colors/font_pressed_color = Color(0.5120767, 0.74876285, 0.9726141, 1)
+theme_override_colors/font_hover_color = Color(0.5137255, 0.7490196, 0.972549, 1)
+theme_override_fonts/font = ExtResource("9_jc3c5")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_glrap")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3qdrn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fkno1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pwj6r")
+text = "More LORE"
+script = ExtResource("10_eo6de")
