@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://j2laxkfgin8f" path="res://assets/Office tiles/Little_Bits_office_objects.png" id="6_5t7m7"]
 [ext_resource type="Texture2D" uid="uid://b3bp1jf438j0a" path="res://assets/office_assets/office_assets/all_assets.png" id="7_a0263"]
 [ext_resource type="Texture2D" uid="uid://caqg3imjqy4tb" path="res://assets/free-office-pixel-art/desk.png" id="8_ae56i"]
+[ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="9_a0263"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1331,6 +1332,7 @@ size = Vector2(5.5, 138)
 size = Vector2(5.5, 81)
 
 [node name="Venue" type="Node2D" unique_id=305777334]
+scale = Vector2(2, 2)
 
 [node name="Map" type="Node2D" parent="." unique_id=1968220234]
 
@@ -1609,3 +1611,5 @@ position = Vector2(927, 554)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D34" unique_id=473871314]
 position = Vector2(-460, -241)
 shape = SubResource("RectangleShape2D_qhtkb")
+
+[node name="Player" parent="." unique_id=1882750258 instance=ExtResource("9_a0263")]
