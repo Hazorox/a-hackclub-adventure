@@ -1,9 +1,23 @@
 [gd_scene format=3 uid="uid://o2nuarbirlio"]
 
 [ext_resource type="Script" uid="uid://ds626nm1yq4n2" path="res://scenes/ui/ui.gd" id="1_g5kmx"]
-[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/title.otf" id="1_u7n8c"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="1_u7n8c"]
+[ext_resource type="FontFile" uid="uid://4ubc6fen5ahe" path="res://assets/fonts/Pixel Game.otf" id="2_0dwhk"]
 [ext_resource type="Script" uid="uid://ia73vl6jxy0u" path="res://scenes/ui/continue.gd" id="3_0dwhk"]
 [ext_resource type="Script" uid="uid://b5i78gckphjks" path="res://scenes/ui/restart.gd" id="4_pfayw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5kmx"]
+font = ExtResource("2_0dwhk")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_nfrx5"]
+script/source = "extends Label
+
+func _process(delta: float) -> void:
+	text = \"OBJECTIVE : \" + Globals.objective.description
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
 font = ExtResource("1_u7n8c")
@@ -111,6 +125,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_g5kmx")
+
+[node name="Label" type="Label" parent="." unique_id=1212009537]
+layout_mode = 0
+offset_right = 93.0
+offset_bottom = 23.0
+text = "OBJECTIVE : "
+label_settings = SubResource("LabelSettings_g5kmx")
+vertical_alignment = 1
+script = SubResource("GDScript_nfrx5")
 
 [node name="escape" type="Control" parent="." unique_id=1356124]
 visible = false

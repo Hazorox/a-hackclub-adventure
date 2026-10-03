@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dyq4dosoaidih"]
+
+[ext_resource type="Script" uid="uid://d0lmfur8bn7hb" path="res://scenes/characters/npc/npc.gd" id="1_4tm60"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+radius = 9.003471
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0hvcy"]
+radius = 17.0
+
+[node name="Npc" type="CharacterBody2D" unique_id=2062938148]
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_4tm60")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=192622117]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990230383]
+shape = SubResource("CircleShape2D_nfrx5")
+
+[node name="interaction" type="Area2D" parent="." unique_id=96812790]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction" unique_id=729612197]
+shape = SubResource("CircleShape2D_0hvcy")
+debug_color = Color(3.2247603e-06, 0.6394677, 0.36870864, 0.41960785)
