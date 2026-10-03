@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3ormk8x14vha"
-path="res://.godot/imported/icon-rounded.webp-849b1012ca17a4c93b8cc78795b562e3.ctex"
+uid="uid://c3rp75snubli2"
+path="res://.godot/imported/pixil-frame-0 (3).png-b75b82bb197be377e7973c90ca641369.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icon-rounded.webp"
-dest_files=["res://.godot/imported/icon-rounded.webp-849b1012ca17a4c93b8cc78795b562e3.ctex"]
+source_file="res://assets/icons/pixil-frame-0 (3).png"
+dest_files=["res://.godot/imported/pixil-frame-0 (3).png-b75b82bb197be377e7973c90ca641369.ctex"]
 
 [params]
 
