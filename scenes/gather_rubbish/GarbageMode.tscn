@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cuymkwx4rxacg"]
 
 [ext_resource type="Script" uid="uid://i0f3lfr5hgkf" path="res://scenes/gather_rubbish/garbage_mode.gd" id="1_vyupg"]
+[ext_resource type="PackedScene" uid="uid://y503u2ndgktw" path="res://scenes/gather_rubbish/rubbish_item.tscn" id="2_rxdsx"]
 
 [node name="GarbageMode" type="Node2D" unique_id=1061071523]
 script = ExtResource("1_vyupg")
+rubbish_item = ExtResource("2_rxdsx")
