@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ddlpihmycasht"]
 
 [ext_resource type="FontFile" uid="uid://s3fqb8j3rbn6" path="res://assets/fonts/kenney_kenney-fonts/Fonts/Kenney Mini Square.ttf" id="1_a3153"]
-[ext_resource type="Texture2D" path="res://assets/hc.webp" id="2_6c0c3"]
+[ext_resource type="Script" uid="uid://dx6oydtpojoya" path="res://scenes/minigames/debugging_game_over.gd" id="1_qtw0q"]
+[ext_resource type="Texture2D" uid="uid://pbetg0m6edfw" path="res://assets/icons/hc.webp" id="2_6c0c3"]
 [ext_resource type="Texture2D" uid="uid://hnddsfsp666l" path="res://assets/icons/download (2).png" id="3_aisa2"]
 [ext_resource type="Texture2D" uid="uid://be6yge8uxmnrg" path="res://assets/icons/download (3).png" id="4_31yw0"]
 [ext_resource type="Texture2D" uid="uid://cd8fj4qlo42cn" path="res://assets/icons/equinox_logo.png" id="5_micoj"]
@@ -50,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qtw0q")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=841143836]
 layout_mode = 1
