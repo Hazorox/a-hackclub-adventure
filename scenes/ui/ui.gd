@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 @onready var escape:Control = $escape
 @onready var escape_canvas:CanvasLayer = $escape/canvas
 func _ready()->void:

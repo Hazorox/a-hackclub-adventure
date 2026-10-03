@@ -5,6 +5,8 @@
 [ext_resource type="FontFile" uid="uid://4ubc6fen5ahe" path="res://assets/fonts/Pixel Game.otf" id="2_0dwhk"]
 [ext_resource type="Script" uid="uid://ia73vl6jxy0u" path="res://scenes/ui/continue.gd" id="3_0dwhk"]
 [ext_resource type="Script" uid="uid://b5i78gckphjks" path="res://scenes/ui/restart.gd" id="4_pfayw"]
+[ext_resource type="Script" uid="uid://ct1x1fgk6eqe" path="res://scenes/ui/rubbish.gd" id="6_7vp6q"]
+[ext_resource type="Texture2D" uid="uid://5ietx3hi8h0c" path="res://assets/trash assets/banana.png" id="7_jcn1r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g5kmx"]
 font = ExtResource("2_0dwhk")
@@ -117,17 +119,31 @@ func on_opt_pressed()->void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 "
 
-[node name="Ui" type="Control" unique_id=954923791]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
+font = ExtResource("2_0dwhk")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tr8j5"]
+font = ExtResource("1_u7n8c")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_8t61q"]
+script/source = "extends Label
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = str(Globals.rubbish_score) +\"/ 10\"
+"
+
+[node name="Ui" type="CanvasLayer" unique_id=579426520]
 script = ExtResource("1_g5kmx")
 
 [node name="Label" type="Label" parent="." unique_id=1212009537]
-layout_mode = 0
 offset_right = 93.0
 offset_bottom = 23.0
 text = "OBJECTIVE : "
@@ -137,7 +153,7 @@ script = SubResource("GDScript_nfrx5")
 
 [node name="escape" type="Control" parent="." unique_id=1356124]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -238,3 +254,41 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_swkix")
 theme_override_styles/focus = SubResource("StyleBoxFlat_hc5d0")
 text = "FULLSCREEN OFF"
 script = SubResource("GDScript_n3vwu")
+
+[node name="rubbish" type="Control" parent="." unique_id=872220897]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_7vp6q")
+
+[node name="Label" type="Label" parent="rubbish" unique_id=1249433141]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 653.0
+offset_right = 441.0
+offset_bottom = 719.0
+text = "Hands Occupied"
+label_settings = SubResource("LabelSettings_0hvcy")
+vertical_alignment = 1
+
+[node name="canvas" type="CanvasLayer" parent="rubbish" unique_id=1757426440]
+
+[node name="TextureRect" type="TextureRect" parent="rubbish/canvas" unique_id=733306776]
+offset_top = 640.0
+offset_right = 40.0
+offset_bottom = 680.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_jcn1r")
+
+[node name="Label2" type="Label" parent="rubbish" unique_id=1872778826]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 616.0
+offset_right = 1280.0
+offset_bottom = 720.0
+text = "0 / 10"
+label_settings = SubResource("LabelSettings_tr8j5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = SubResource("GDScript_8t61q")
