@@ -1381,6 +1381,7 @@ func run(npc:CharacterBody2D,player:CharacterBody2D)->void:
 "
 
 [node name="Venue" type="Node2D" unique_id=305777334]
+scale = Vector2(2, 2)
 
 [node name="Map" type="Node2D" parent="." unique_id=1968220234]
 
