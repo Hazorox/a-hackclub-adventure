@@ -262,7 +262,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_7vp6q")
 
-[node name="Label" type="Label" parent="rubbish" unique_id=1249433141]
+[node name="hands_trash" type="Label" parent="rubbish" unique_id=1249433141]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 653.0
@@ -274,7 +274,7 @@ vertical_alignment = 1
 
 [node name="canvas" type="CanvasLayer" parent="rubbish" unique_id=1757426440]
 
-[node name="TextureRect" type="TextureRect" parent="rubbish/canvas" unique_id=733306776]
+[node name="rubbishIcon" type="TextureRect" parent="rubbish/canvas" unique_id=733306776]
 offset_top = 640.0
 offset_right = 40.0
 offset_bottom = 680.0

@@ -1499,6 +1499,7 @@ shape = SubResource("RectangleShape2D_231yp")
 
 [node name="trash_2" type="Area2D" parent="Collisions" unique_id=860451978 groups=["trash_bin"]]
 position = Vector2(781, 350)
+script = ExtResource("9_231yp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/trash_2" unique_id=720322027]
 position = Vector2(-389.50003, -326.00003)
@@ -1507,6 +1508,7 @@ shape = SubResource("RectangleShape2D_231yp")
 
 [node name="trash_3" type="Area2D" parent="Collisions" unique_id=1856588139 groups=["trash_bin"]]
 position = Vector2(877, 350)
+script = ExtResource("9_231yp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/trash_3" unique_id=1966729958]
 position = Vector2(-388.50003, -331.5)
@@ -1669,6 +1671,7 @@ shape = SubResource("RectangleShape2D_qhtkb")
 
 [node name="Ellie_rubbish" parent="." unique_id=2062938148 instance=ExtResource("9_a0263")]
 position = Vector2(558.5, 73.5)
+scale = Vector2(1, 1)
 npc_number = 26
 on_interact = SubResource("GDScript_yuhmj")
 
