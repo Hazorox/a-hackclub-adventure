@@ -1,17 +1,29 @@
 [gd_scene format=3 uid="uid://did26kwowqjgl"]
 
 [ext_resource type="FontFile" uid="uid://c5aysy3aic3rd" path="res://assets/fonts/Electroharmonix.otf" id="1_ey3e0"]
+[ext_resource type="Texture2D" uid="uid://v3vgb04n0okn" path="res://assets/cat/normal_talking.png" id="1_sbv0p"]
 [ext_resource type="FontFile" uid="uid://dskwk2qw2bidm" path="res://assets/fonts/Dedicool.ttf" id="2_sbv0p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7wsd"]
-bg_color = Color(1.037, 1.211, 0.778, 1)
+bg_color = Color(1.2108967, 0.75916886, 0.410962, 1)
 border_width_left = 7
 border_width_top = 7
 border_width_right = 7
 border_width_bottom = 7
-border_color = Color(0, 0.07058824, 0.24705882, 1)
+border_color = Color(0.21960784, 0.07058824, 0.40392157, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1600729092]
+
+[node name="start" type="Label" parent="." unique_id=11749497]
+offset_left = 23.0
+offset_top = 221.0
+offset_right = 110.0
+offset_bottom = 280.0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.21960784, 0.07058824, 0.40392157, 1)
+theme_override_fonts/font = ExtResource("1_ey3e0")
+theme_override_font_sizes/font_size = 48
+text = "Cat"
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1756455059]
 anchors_preset = 10
@@ -46,6 +58,9 @@ theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer" unique_id=1226169698]
+position = Vector2(87.000015, 88)
+scale = Vector2(5.5227275, 5.522727)
+texture = ExtResource("1_sbv0p")
 
 [node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/MarginContainer/HBoxContainer" unique_id=1899782475]
 layout_mode = 2
@@ -65,7 +80,7 @@ theme_override_constants/separation = 8
 [node name="start" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=1149286606]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_colors/font_color = Color(0, 0.07058824, 0.24705882, 1)
+theme_override_colors/font_color = Color(0.21960784, 0.07058824, 0.40392157, 1)
 theme_override_fonts/font = ExtResource("1_ey3e0")
 theme_override_font_sizes/font_size = 32
 text = "*"
@@ -73,7 +88,7 @@ text = "*"
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=2126448335]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0.07058824, 0.24705882, 1)
+theme_override_colors/default_color = Color(0.21960784, 0.07058824, 0.40392157, 1)
 theme_override_fonts/normal_font = ExtResource("2_sbv0p")
 theme_override_font_sizes/normal_font_size = 56
 text = "Placeholder"
@@ -81,7 +96,7 @@ text = "Placeholder"
 [node name="end" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=1135807721]
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_colors/font_color = Color(0, 0.07058824, 0.24705882, 1)
+theme_override_colors/font_color = Color(0.21960784, 0.07058824, 0.40392157, 1)
 theme_override_fonts/font = ExtResource("1_ey3e0")
 theme_override_font_sizes/font_size = 32
 text = "v"
