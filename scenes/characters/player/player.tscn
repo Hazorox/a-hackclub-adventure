@@ -123,7 +123,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onkbk"]
+radius = 6.75
+height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0hvcy"]
 radius = 17.0
@@ -145,11 +147,13 @@ animation = &"up"
 frame_progress = 0.5704584
 
 [node name="collision" type="CollisionShape2D" parent="." unique_id=1850629485]
-shape = SubResource("CircleShape2D_nfrx5")
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_onkbk")
 
 [node name="interaction" type="Area2D" parent="." unique_id=2144896024 groups=["player_interaction"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction" unique_id=2060792654]
+position = Vector2(0, 0.75)
 shape = SubResource("CircleShape2D_0hvcy")
 debug_color = Color(0.93207324, 0.21199107, 0.39595628, 0.41960785)
 
