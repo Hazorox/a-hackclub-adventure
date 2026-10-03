@@ -2,7 +2,7 @@ extends Sprite2D
 
 var area = get_parent() as Control 
 func _ready() -> void:
-	var area = get_parent() as Control 
+	area = get_parent() as Control 
 	if area:
 		area.resized.connect(apply)
 	apply()
@@ -21,7 +21,7 @@ func apply():
 		box = Vector2(170,170)
 		
 	var tex_size = texture.get_size()
-	if tex_size.x==0 or tex_size.x==0:
+	if tex_size.x==0 or tex_size.y==0:
 		return
 		
 	var s = min(box.x/tex_size.x, box.y/tex_size.y)
