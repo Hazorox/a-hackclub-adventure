@@ -1,16 +1,10 @@
 [gd_scene format=3 uid="uid://cg001aqyetlia"]
 
 [ext_resource type="Texture2D" uid="uid://pbetg0m6edfw" path="res://assets/hc.webp" id="1_0ebjn"]
-[ext_resource type="Script" uid="uid://cywpv2tu24bh8" path="res://scenes/main_menu/main_menu.gd" id="1_uqeha"]
-[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="2_ob46e"]
 [ext_resource type="Texture2D" uid="uid://bg8e68udt6d6c" path="res://assets/bg.png" id="2_3ovsr"]
-[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/title.otf" id="2_ob46e"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="2_ob46e"]
 [ext_resource type="Texture2D" uid="uid://dem12vkmkcomo" path="res://assets/orph.png" id="2_wem23"]
-[ext_resource type="PackedScene" uid="uid://o2nuarbirlio" path="res://scenes/ui/ui.tscn" id="5_wem23"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
-font = ExtResource("2_ob46e")
-font_size = 64
+[ext_resource type="FontFile" uid="uid://c4bsxkp20340c" path="res://assets/fonts/Velocita - Italic Personal Use.otf" id="4_wem23"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
 bg_color = Color(0.9372549, 0.27058825, 0.29803923, 1)
@@ -172,10 +166,10 @@ texture = ExtResource("2_wem23")
 expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="canvas" unique_id=504868234]
-offset_left = 295.0
-offset_top = 225.0
-offset_right = 423.0
-offset_bottom = 353.0
+offset_left = 444.0
+offset_top = 165.0
+offset_right = 545.0
+offset_bottom = 268.91345
 texture = ExtResource("1_0ebjn")
 expand_mode = 1
 
@@ -184,13 +178,17 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -487.0
-offset_top = 237.0
-offset_right = 497.0
-offset_bottom = 341.0
+offset_left = -458.0
+offset_top = 162.0
+offset_right = 526.0
+offset_bottom = 385.0
 grow_horizontal = 2
-text = "A              Adventure"
-label_settings = SubResource("LabelSettings_nfrx5")
+theme_override_fonts/font = ExtResource("4_wem23")
+theme_override_font_sizes/font_size = 106
+text = "A    ackclub 
+Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="vsplit" type="VSplitContainer" parent="." unique_id=1871361275]
 layout_mode = 1
@@ -241,6 +239,3 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
 text = "FULLSCREEN OFF"
 script = SubResource("GDScript_0hvcy")
-
-[node name="Ui" parent="." unique_id=954923791 instance=ExtResource("5_wem23")]
-layout_mode = 1
