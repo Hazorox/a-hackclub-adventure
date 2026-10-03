@@ -1381,6 +1381,7 @@ func run(npc:CharacterBody2D,player:CharacterBody2D)->void:
 "
 
 [node name="Venue" type="Node2D" unique_id=305777334]
+y_sort_enabled = true
 scale = Vector2(2, 2)
 
 [node name="Map" type="Node2D" parent="." unique_id=1968220234]
@@ -1415,6 +1416,7 @@ tile_map_data = PackedByteArray("AAAGAAIAAAASAAEAAAAIAAIAAAASAAIAAAATAAIAAAAaAAI
 tile_set = SubResource("TileSet_hsu21")
 
 [node name="Collisions" type="Node2D" parent="." unique_id=1685014934]
+y_sort_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Collisions" unique_id=2144465699]
 

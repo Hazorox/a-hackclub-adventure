@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://dehg42ply2m5e"]
+
+[ext_resource type="Script" uid="uid://b3qomhnvuyias" path="res://scenes/minigames/debugging_mini_game.gd" id="1_2wder"]
+[ext_resource type="Script" uid="uid://2dhwt27xfq1q" path="res://scenes/minigames/code_edit.gd" id="2_2wder"]
+[ext_resource type="FontFile" uid="uid://bxx4pyhgbqw52" path="res://assets/fonts/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="3_wm64y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onkbk"]
+bg_color = Color(0.44763368, 0, 0.16852438, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 1, 0.73333335, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 1, 0.73333335, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wder"]
+bg_color = Color(0, 1, 0.73333335, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.44705883, 0, 0.16862746, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.44705883, 0, 0.16862746, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xgjn"]
+bg_color = Color(0.31673554, 0.706314, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9490196, 0.9490196, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.9490196, 0.9490196, 0, 1)
+shadow_size = 5
+
+[node name="DebuggingMiniGame" type="Control" unique_id=1253324585]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2wder")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=868858724]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=694213275]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 300
+
+[node name="CodeEdit" type="CodeEdit" parent="MarginContainer" unique_id=237662784]
+layout_mode = 2
+editable = false
+gutters_draw_line_numbers = true
+script = ExtResource("2_2wder")
+
+[node name="Choice A" type="Button" parent="." unique_id=1744960544]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 500.0
+offset_right = 390.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0, 1, 0.73333335, 1)
+theme_override_colors/font_pressed_color = Color(0.44705883, 0, 0.16862746, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("3_wm64y")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_onkbk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2wder")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4xgjn")
+text = "place holder"
+
+[node name="Choice B" type="Button" parent="." unique_id=1994289378]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 500.0
+offset_right = 815.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0, 1, 0.73333335, 1)
+theme_override_colors/font_pressed_color = Color(0.44705883, 0, 0.16862746, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("3_wm64y")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_onkbk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2wder")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4xgjn")
+text = "   PLACE HOLDER   "
+
+[node name="Choice C" type="Button" parent="." unique_id=358371355]
+layout_mode = 0
+offset_left = 890.0
+offset_top = 500.0
+offset_right = 1240.0
+offset_bottom = 600.0
+theme_override_colors/font_color = Color(0, 1, 0.73333335, 1)
+theme_override_colors/font_pressed_color = Color(0.44705883, 0, 0.16862746, 1)
+theme_override_colors/font_hover_color = Color(0.9490196, 0.9490196, 0, 1)
+theme_override_fonts/font = ExtResource("3_wm64y")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_onkbk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2wder")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4xgjn")
+text = "   PLACE HOLDER   "
+
+[connection signal="pressed" from="Choice A" to="." method="_on_choice_a_pressed"]
+[connection signal="pressed" from="Choice B" to="." method="_on_choice_b_pressed"]
+[connection signal="pressed" from="Choice C" to="." method="_on_choice_c_pressed"]

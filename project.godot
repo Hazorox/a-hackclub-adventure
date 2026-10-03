@@ -19,6 +19,7 @@ config/icon="uid://d21da5wlx3ajf"
 
 BetterTerrain="*uid://dx3fwj5y8pvnq"
 Globals="*uid://boj1de3u456do"
+DebuggingQuestions="*uid://dllop2di7nf5l"
 
 [display]
 
