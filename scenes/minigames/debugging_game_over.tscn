@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://ddlpihmycasht"]
+
+[ext_resource type="FontFile" uid="uid://s3fqb8j3rbn6" path="res://assets/fonts/kenney_kenney-fonts/Fonts/Kenney Mini Square.ttf" id="1_a3153"]
+[ext_resource type="Texture2D" uid="uid://pbetg0m6edfw" path="res://assets/hc.webp" id="2_6c0c3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onkbk"]
+bg_color = Color(0.3529412, 0, 0.68235296, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6c0c3"]
+bg_color = Color(0.7514611, 0.7514611, 0.75146097, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9071351, 0.80550456, 1.1551381e-06, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ad8vj"]
+bg_color = Color(0, 0.68712795, 0.6831634, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="DebuggingGameOver" type="Control" unique_id=545578203]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=841143836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1901378034]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 600
+
+[node name="Title" type="Label" parent="MarginContainer" unique_id=909655878]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.25882354, 0.41568628, 1)
+theme_override_fonts/font = ExtResource("1_a3153")
+theme_override_font_sizes/font_size = 64
+text = "You've lost to a bug T_T"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="." unique_id=525293210]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -42.0
+offset_right = 146.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_a3153")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_onkbk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6c0c3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ad8vj")
+text = " Restart"
+
+[node name="Exit" type="Button" parent="." unique_id=1008206413]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = 55.0
+offset_right = 146.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_a3153")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_onkbk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6c0c3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ad8vj")
+text = "Exit
+"
+
+[node name="Textures" type="Control" parent="." unique_id=1516346298]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Textures" unique_id=1052658664]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 155.0
+offset_top = 205.0
+offset_right = -1025.0
+offset_bottom = -415.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.5235988
+texture = ExtResource("2_6c0c3")
+expand_mode = 1

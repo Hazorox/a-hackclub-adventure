@@ -105,7 +105,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	change_choices()
-	print(DebuggingQuestions.correct_answers)
+	if DebuggingQuestions.correct_answers == 10:
+		print("you've won")
 
 func _on_choice_a_pressed() -> void:
 	if DebuggingQuestions.correct_answers == 0:
