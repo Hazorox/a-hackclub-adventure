@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://cg001aqyetlia"]
 
-[ext_resource type="Texture2D" uid="uid://pbetg0m6edfw" path="res://assets/hc.webp" id="1_0ebjn"]
-[ext_resource type="Texture2D" uid="uid://bg8e68udt6d6c" path="res://assets/bg.png" id="2_3ovsr"]
+[ext_resource type="Texture2D" path="res://assets/hc.webp" id="1_0ebjn"]
+[ext_resource type="Texture2D" path="res://assets/bg.png" id="2_3ovsr"]
 [ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="2_ob46e"]
-[ext_resource type="Texture2D" uid="uid://dem12vkmkcomo" path="res://assets/orph.png" id="2_wem23"]
+[ext_resource type="Texture2D" path="res://assets/orph.png" id="2_wem23"]
 [ext_resource type="FontFile" uid="uid://c4bsxkp20340c" path="res://assets/fonts/Velocita - Italic Personal Use.otf" id="4_wem23"]
 [ext_resource type="FontFile" uid="uid://c5aysy3aic3rd" path="res://assets/fonts/Electroharmonix.otf" id="5_3ovsr"]
+[ext_resource type="Script" uid="uid://6m2yoq5q5ck1" path="res://scenes/main_menu/lore.gd" id="7_5seab"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nfrx5"]
 bg_color = Color(0.9372549, 0.27058825, 0.29803923, 1)
@@ -138,6 +139,19 @@ func on_opt_pressed()->void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 "
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7rlf"]
+bg_color = Color(0.09667533, 0.49683473, 0.03950025, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.003921569, 0.08235294, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="MainMenu" type="Control" unique_id=1078224139]
 layout_mode = 3
 anchors_preset = 15
@@ -191,22 +205,6 @@ Adventure"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label" type="Label" parent="Label" unique_id=639307517]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -511.0
-offset_top = -232.0
-offset_right = 473.0
-offset_bottom = -9.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("5_3ovsr")
-theme_override_font_sizes/font_size = 53
-text = "AboEl5yr - Hazoro - VII"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="vsplit" type="VSplitContainer" parent="." unique_id=1871361275]
 layout_mode = 1
 anchors_preset = 8
@@ -221,9 +219,9 @@ offset_bottom = 296.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 36
-split_offsets = PackedInt32Array(13)
+split_offsets = PackedInt32Array(19)
 dragging_enabled = false
-split_offset = 13
+split_offset = 19
 
 [node name="start" type="Button" parent="vsplit" unique_id=842120058]
 layout_mode = 2
@@ -256,3 +254,40 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
 text = "FULLSCREEN OFF"
 script = SubResource("GDScript_0hvcy")
+
+[node name="Label2" type="Label" parent="." unique_id=639307517]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -477.0
+offset_top = -70.0
+offset_right = 507.0
+offset_bottom = 153.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_3ovsr")
+theme_override_font_sizes/font_size = 53
+text = "AboEl5yr - Hazoro - VII"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lore" type="Button" parent="." unique_id=612649572]
+layout_mode = 0
+offset_left = 134.16461
+offset_top = 263.33548
+offset_right = 366.23486
+offset_bottom = 384.41562
+rotation = 0.36294797
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.76117325, 0.87597364, 0.9884402, 1)
+theme_override_colors/font_pressed_color = Color(0.5120767, 0.74876285, 0.9726141, 1)
+theme_override_colors/font_hover_color = Color(0.5137255, 0.7490196, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_ob46e")
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_s7rlf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0hvcy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
+text = "LORE"
+script = ExtResource("7_5seab")
