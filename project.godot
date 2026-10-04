@@ -51,6 +51,7 @@ right_arrow=""
 left_arrow=""
 up_arrow=""
 down_arrow=""
+losing_area=""
 
 [gui]
 

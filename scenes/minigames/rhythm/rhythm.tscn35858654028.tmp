@@ -40,6 +40,9 @@ sources/0 = SubResource("TileSetAtlasSource_8u1t0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
 size = Vector2(141, 163)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad8vj"]
+size = Vector2(1280, 20)
+
 [node name="Rhythm" type="Node2D" unique_id=492125944]
 script = ExtResource("1_xh1vk")
 
@@ -111,4 +114,11 @@ offset_bottom = 101.0
 theme_override_font_sizes/font_size = 32
 text = "Score:"
 
+[node name="LosingDetectionArea" type="Area2D" parent="." unique_id=1767462490 groups=["losing_area"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LosingDetectionArea" unique_id=1534637151]
+position = Vector2(639, 710)
+shape = SubResource("RectangleShape2D_ad8vj")
+
 [connection signal="timeout" from="ArrowSpawningTimer" to="." method="_on_arrow_spawning_timer_timeout"]
+[connection signal="area_entered" from="LosingDetectionArea" to="." method="_on_losing_detection_area_area_entered"]
