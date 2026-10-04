@@ -6,6 +6,8 @@ extends Control
 @onready var choice_c: Button = $"Choice C"
 
 var layer : CanvasLayer = null
+var gameover_layer : CanvasLayer = null
+var gameover_scene : PackedScene = preload("res://scenes/minigames/debugging_game_over.tscn")
 var winning_scene : PackedScene = preload("res://scenes/minigames/debugging_winning.tscn")
 
 var text_0 :=  """extends CharacterBody2D
@@ -130,7 +132,7 @@ func _on_choice_a_pressed() -> void:
 	elif DebuggingQuestions.correct_answers == 9:
 		DebuggingQuestions.correct_answers += 1
 	else:
-		print("you've lost")
+		game_over()
 
 func _on_choice_b_pressed() -> void:
 	if DebuggingQuestions.correct_answers == 2:
@@ -140,7 +142,7 @@ func _on_choice_b_pressed() -> void:
 	elif DebuggingQuestions.correct_answers == 8:
 		DebuggingQuestions.correct_answers += 1
 	else:
-		print("you've lost")
+		game_over()
 
 func _on_choice_c_pressed() -> void:
 	if DebuggingQuestions.correct_answers == 1:
@@ -150,7 +152,7 @@ func _on_choice_c_pressed() -> void:
 	elif DebuggingQuestions.correct_answers == 7:
 		DebuggingQuestions.correct_answers += 1
 	else:
-		print("you've lost")
+		game_over()
 
 func change_choices() -> void:
 	if DebuggingQuestions.correct_answers == 1: 
@@ -198,3 +200,26 @@ func change_choices() -> void:
 		choice_a.text = "await"
 		choice_b.text = "wait"
 		choice_c.text = "delay"
+
+func game_over() -> void:
+	if gameover_layer != null:
+		return
+	choice_a.disabled = true
+	choice_b.disabled = true
+	choice_c.disabled = true
+
+	gameover_layer = CanvasLayer.new()
+	gameover_layer.layer = 100
+	add_child(gameover_layer)
+
+	var gameover = gameover_scene.instantiate()
+	gameover_layer.add_child(gameover)
+	if gameover is Control:
+		gameover.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+
+func restart() -> void:
+	DebuggingQuestions.correct_answers = 0
+	code_edit.text = text_0
+	choice_a.text = "move_and_slide()"
+	choice_b.text = "move_and_collide(velocity)"
+	choice_c.text

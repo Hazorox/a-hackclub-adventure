@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dyq4dosoaidih" path="res://scenes/characters/npc/npc.tscn" id="9_a0263"]
 [ext_resource type="PackedScene" uid="uid://cuymkwx4rxacg" path="res://scenes/gather_rubbish/GarbageMode.tscn" id="10_ae56i"]
 [ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="11_yuhmj"]
-[ext_resource type="PackedScene" uid="uid://o2nuarbirlio" path="res://scenes/ui/ui.tscn" id="13_tqqrh"]
+[ext_resource type="PackedScene" uid="uid://o2nuarbirlio" path="res://scenes/ui/ui_survive.tscn" id="13_tqqrh"]
 [ext_resource type="PackedScene" uid="uid://cujocc6edectd" path="res://scenes/cat/cat.tscn" id="14_2atwm"]
 [ext_resource type="Script" uid="uid://dyq283ahcnrx" path="res://scenes/venue/debugging_mode.gd" id="15_hxsln"]
 [ext_resource type="Script" uid="uid://bgrqlmxasa87k" path="res://scenes/venue/rhythm_mode.gd" id="16_qhtkb"]
@@ -1357,10 +1357,15 @@ script/source = "extends RefCounted
 
 
 func run(npc:CharacterBody2D,player:CharacterBody2D):
-	# DIALOGGGG
+	if npc.has_meta(\"debugging_started\"):
+		return
 	var debugging_mode = npc.get_parent().get_node_or_null(\"DebuggingMode\")
-	if debugging_mode != null:
-		debugging_mode.start()
+	if debugging_mode == null:
+		return
+	npc.set_meta(\"debugging_started\", true)
+	debugging_mode.start()
+	npc.queue_free() 
+	Globals.friends += 1
 "
 
 [sub_resource type="GDScript" id="GDScript_hxsln"]
@@ -1368,9 +1373,15 @@ script/source = "extends RefCounted
 
 
 func run(npc:CharacterBody2D,player:CharacterBody2D):
+	if npc.has_meta(\"rhythm_started\"):
+		return
 	var rhythm_mode = npc.get_parent().get_node_or_null(\"RhythmMode\")
-	if rhythm_mode != null and rhythm_mode.has_method(\"start\"):
-		rhythm_mode.start()
+	if rhythm_mode == null:
+		return
+	npc.set_meta(\"rhythm_started\", true)
+	rhythm_mode.start()
+	npc.queue_free()
+	Globals.friends += 1
 "
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hyd08"]
