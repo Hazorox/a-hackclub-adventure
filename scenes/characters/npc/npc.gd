@@ -1,3 +1,5 @@
+#so when extednding a new script extends NPC
+class_name NPC
 extends CharacterBody2D
 
 # To determine the sprite sheet to use

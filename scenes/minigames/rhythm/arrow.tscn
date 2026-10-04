@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://3nqmm7vyguf4"]
+
+[ext_resource type="Script" uid="uid://bpadk62gycjbl" path="res://scenes/minigames/rhythm/arrow.gd" id="1_ibxte"]
+[ext_resource type="Texture2D" uid="uid://3b48mcqqui6t" path="res://assets/rhythm/Arrow_1_right.png" id="1_muc2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onkbk"]
+size = Vector2(28.2, 22.000004)
+
+[node name="Arrow" type="Area2D" unique_id=638718109]
+scale = Vector2(5, 5)
+script = ExtResource("1_ibxte")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=807201721]
+position = Vector2(0, -1)
+texture = ExtResource("1_muc2c")
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="." unique_id=483311462]
+position = Vector2(-1.9000016, -1.9999995)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_onkbk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

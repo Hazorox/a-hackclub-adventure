@@ -9,7 +9,7 @@ var text_0 :=  """extends CharacterBody2D
 
 const SPEED := 300
 
-func _ready() -> void:
+func _process() -> void:
 	var direction := Input.get_input_vector("left", "right", "up", "down")
 	velocity = SPEED * direction
 	#Answer"""
