@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="11_yuhmj"]
 [ext_resource type="PackedScene" uid="uid://o2nuarbirlio" path="res://scenes/ui/ui.tscn" id="13_tqqrh"]
 [ext_resource type="PackedScene" uid="uid://cujocc6edectd" path="res://scenes/cat/cat.tscn" id="14_2atwm"]
+[ext_resource type="Script" uid="uid://dyq283ahcnrx" path="res://scenes/venue/debugging_mode.gd" id="15_hxsln"]
+[ext_resource type="Script" uid="uid://bgrqlmxasa87k" path="res://scenes/venue/rhythm_mode.gd" id="16_qhtkb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1350,6 +1352,27 @@ func run(npc:CharacterBody2D,player:CharacterBody2D):
 		garbage_mode.start()
 "
 
+[sub_resource type="GDScript" id="GDScript_sy5xd"]
+script/source = "extends RefCounted
+
+
+func run(npc:CharacterBody2D,player:CharacterBody2D):
+	# DIALOGGGG
+	var debugging_mode = npc.get_parent().get_node_or_null(\"DebuggingMode\")
+	if debugging_mode != null:
+		debugging_mode.start()
+"
+
+[sub_resource type="GDScript" id="GDScript_hxsln"]
+script/source = "extends RefCounted
+
+
+func run(npc:CharacterBody2D,player:CharacterBody2D):
+	var rhythm_mode = npc.get_parent().get_node_or_null(\"RhythmMode\")
+	if rhythm_mode != null and rhythm_mode.has_method(\"start\"):
+		rhythm_mode.start()
+"
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_hyd08"]
 vertices = PackedVector2Array(183.75, 25, 175.52344, 25, 205.5, 24.726563, 456.25, 343.6172, 8.5390625, 341.53125, 74.5, 315, 85.5, 315, 455.5, 189, 405.5, 189, 75, 123, 85.5, 123, 21.5, 315, 10.453125, 26.429688, 21.5, 285, 608, 58, 632.2578, 58, 633, 182.79688, 633, 344.45313, 477.75, 264.5, 477, 239, 477, 85, 478, 67, 375.75, 63, 432, 58, 456.5, 58, 456.5, 67, 455.5, 85, 405.5, 93, 394.5, 93, 373, 72, 375.75, 25, 432, 22.78125, 258.5, 24.289063, 281.25, 25, 258.5, 30, 281.25, 63, 205.5, 30, 183.75, 63, 477.9922, 22.390625, 608, 21.257813, 64.13281, 25.960938, 89.25, 25.742188, 89.25, 63, 64.13281, 57, 32, 26.242188, 32, 57, 22, 93, 455.5, 93, 405.5, 123, 394.5, 123, 455.5, 123, 405.5, 219, 394.5, 219, 394.5, 189, 341.5, 189, 455.5, 219, 455.5, 239, 456.25, 264.5, 456.25, 285, 405.5, 285, 74.5, 219, 85.5, 219, 405.5, 315, 394.5, 315, 394.5, 285, 456.25, 315, 92, 63, 92, 72, 181, 72, 181, 63, 284, 63, 284, 72, 277.5, 93, 373, 63, 341.5, 93, 477.75, 343.71875, 341.5, 285, 85.5, 93, 75, 93, 341.5, 123, 330.5, 123, 330.5, 93, 277.5, 123, 202.5, 93, 202.5, 123, 149.5, 93, 341.5, 315, 330.5, 315, 330.5, 285, 277.5, 285, 277.5, 315, 202.5, 285, 341.5, 219, 330.5, 219, 330.5, 189, 277.5, 189, 277.5, 219, 202.5, 189, 149.5, 123, 138.5, 123, 138.5, 93, 202.5, 315, 149.5, 285, 21.5, 219, 22, 123, 21.5, 189, 202.5, 219, 149.5, 189, 149.5, 315, 138.5, 315, 138.5, 285, 85.5, 285, 74.5, 285, 74.5, 189, 149.5, 219, 138.5, 219, 138.5, 189, 85.5, 189)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(7, 8, 9, 10), PackedInt32Array(11, 5, 4), PackedInt32Array(11, 4, 12, 13), PackedInt32Array(14, 15, 16, 17, 18, 19, 20, 21), PackedInt32Array(22, 23, 24, 25, 26, 27, 28, 29), PackedInt32Array(23, 22, 30, 31), PackedInt32Array(32, 31, 30, 33), PackedInt32Array(34, 32, 33, 35), PackedInt32Array(0, 2, 36, 37), PackedInt32Array(38, 39, 14, 21), PackedInt32Array(25, 21, 20, 26), PackedInt32Array(40, 41, 42, 43), PackedInt32Array(12, 44, 45, 46), PackedInt32Array(26, 47, 27), PackedInt32Array(27, 48, 49, 28), PackedInt32Array(48, 50, 7), PackedInt32Array(8, 51, 52, 53), PackedInt32Array(9, 8, 53), PackedInt32Array(9, 53, 54), PackedInt32Array(51, 55, 56), PackedInt32Array(56, 57, 58, 59, 60, 61), PackedInt32Array(59, 62, 63, 64), PackedInt32Array(62, 65, 3), PackedInt32Array(42, 66, 67), PackedInt32Array(68, 69, 37), PackedInt32Array(68, 35, 70, 71, 72), PackedInt32Array(29, 73, 22), PackedInt32Array(29, 28, 74, 71), PackedInt32Array(17, 75, 18), PackedInt32Array(19, 18, 57, 56), PackedInt32Array(60, 59, 64), PackedInt32Array(60, 64, 76), PackedInt32Array(45, 43, 42, 67, 77, 78), PackedInt32Array(37, 36, 34, 35, 68), PackedInt32Array(49, 48, 7), PackedInt32Array(79, 49, 7), PackedInt32Array(79, 7, 80), PackedInt32Array(74, 79, 80, 81), PackedInt32Array(71, 74, 81), PackedInt32Array(71, 81, 72), PackedInt32Array(68, 72, 82, 83), PackedInt32Array(63, 62, 3), PackedInt32Array(82, 80, 7), PackedInt32Array(82, 7, 84), PackedInt32Array(82, 84, 83), PackedInt32Array(68, 83, 85, 67), PackedInt32Array(86, 63, 3), PackedInt32Array(86, 3, 87), PackedInt32Array(76, 86, 87, 88), PackedInt32Array(60, 76, 88), PackedInt32Array(60, 88, 89), PackedInt32Array(60, 89, 90, 91), PackedInt32Array(52, 51, 56), PackedInt32Array(92, 52, 56), PackedInt32Array(92, 56, 93), PackedInt32Array(54, 92, 93, 94), PackedInt32Array(9, 54, 94), PackedInt32Array(9, 94, 95), PackedInt32Array(9, 95, 96, 97), PackedInt32Array(98, 84, 7), PackedInt32Array(98, 7, 99), PackedInt32Array(85, 98, 99, 100), PackedInt32Array(67, 85, 100), PackedInt32Array(67, 100, 77), PackedInt32Array(90, 87, 3), PackedInt32Array(90, 3, 101), PackedInt32Array(90, 101, 91), PackedInt32Array(60, 91, 102, 103), PackedInt32Array(10, 99, 7), PackedInt32Array(77, 10, 9, 78), PackedInt32Array(45, 78, 46), PackedInt32Array(12, 46, 104, 105), PackedInt32Array(96, 93, 56), PackedInt32Array(96, 56, 106), PackedInt32Array(96, 106, 97), PackedInt32Array(9, 97, 107, 104), PackedInt32Array(108, 101, 3), PackedInt32Array(108, 3, 109), PackedInt32Array(102, 108, 109, 110), PackedInt32Array(103, 102, 110), PackedInt32Array(103, 110, 111), PackedInt32Array(6, 109, 3), PackedInt32Array(111, 6, 5, 112), PackedInt32Array(103, 111, 112), PackedInt32Array(103, 112, 13), PackedInt32Array(103, 13, 12), PackedInt32Array(105, 103, 12), PackedInt32Array(113, 105, 104), PackedInt32Array(114, 106, 56), PackedInt32Array(114, 56, 115), PackedInt32Array(107, 114, 115, 116), PackedInt32Array(104, 107, 116), PackedInt32Array(104, 116, 117), PackedInt32Array(113, 104, 117), PackedInt32Array(113, 117, 61, 60), PackedInt32Array(56, 61, 115)])
@@ -1430,6 +1453,16 @@ position = Vector2(558.5, 73.5)
 scale = Vector2(1, 1)
 npc_number = 26
 on_interact = SubResource("GDScript_yuhmj")
+
+[node name="Alexander_Debugging" parent="." unique_id=2104099054 instance=ExtResource("9_a0263")]
+position = Vector2(51.5, 84)
+npc_number = 15
+on_interact = SubResource("GDScript_sy5xd")
+
+[node name="Anomar" parent="." unique_id=1575755990 instance=ExtResource("9_a0263")]
+position = Vector2(406.5, 301.5)
+npc_number = 17
+on_interact = SubResource("GDScript_hxsln")
 
 [node name="Player" parent="." unique_id=1882750258 instance=ExtResource("11_yuhmj")]
 position = Vector2(247, 162)
@@ -1769,3 +1802,9 @@ position = Vector2(-460, -241)
 shape = SubResource("RectangleShape2D_qhtkb")
 
 [node name="GarbageMode" parent="." unique_id=1061071523 instance=ExtResource("10_ae56i")]
+
+[node name="DebuggingMode" type="Node2D" parent="." unique_id=1494169214]
+script = ExtResource("15_hxsln")
+
+[node name="RhythmMode" type="Node2D" parent="." unique_id=1175701009]
+script = ExtResource("16_qhtkb")

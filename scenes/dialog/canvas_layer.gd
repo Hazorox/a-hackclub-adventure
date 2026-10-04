@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var cont: Panel = $MarginContainer/Panel
 @onready var label: Label = $name
 @onready var sprite2d: Sprite2D = $MarginContainer/MarginContainer/HBoxContainer/MarginContainer/Sprite2D
+
 var queue: Array = []
 var choices: Array = []
 var callback: Callable

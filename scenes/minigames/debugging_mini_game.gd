@@ -5,6 +5,9 @@ extends Control
 @onready var choice_b: Button = $"Choice B"
 @onready var choice_c: Button = $"Choice C"
 
+var layer : CanvasLayer = null
+var winning_scene : PackedScene = preload("res://scenes/minigames/debugging_winning.tscn")
+
 var text_0 :=  """extends CharacterBody2D
 
 const SPEED := 300
@@ -106,7 +109,16 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	change_choices()
 	if DebuggingQuestions.correct_answers == 10:
-		print("you've won")
+		if layer != null:
+			return
+		layer = CanvasLayer.new()
+		layer.layer = 100
+		add_child(layer)
+		var winning = winning_scene.instantiate()
+		layer.add_child(winning)
+		winning.tree_exited.connect(func():
+			layer.queue_free()
+			layer = null)
 
 func _on_choice_a_pressed() -> void:
 	if DebuggingQuestions.correct_answers == 0:

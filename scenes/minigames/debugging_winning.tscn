@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://qx11aapvnkau"]
 
+[ext_resource type="Script" uid="uid://b4aswq6jbo7qb" path="res://scenes/minigames/debugging_winning.gd" id="1_ckq1x"]
 [ext_resource type="FontFile" uid="uid://b7eo8t1u3k2v1" path="res://assets/fonts/kenney_kenney-fonts/Fonts/Kenney Mini Square Mono.ttf" id="1_w7kxx"]
 [ext_resource type="Texture2D" uid="uid://ckody5iachpv" path="res://assets/icons/IMG_2689.png" id="2_w2axv"]
 [ext_resource type="Texture2D" uid="uid://dmjtdddustjde" path="res://assets/icons/IMG_2686.png" id="3_tpl4v"]
@@ -49,6 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ckq1x")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1622861465]
 layout_mode = 1
@@ -147,3 +149,5 @@ offset_right = 497.9
 offset_bottom = 247.9
 texture = ExtResource("5_ckq1x")
 expand_mode = 1
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
