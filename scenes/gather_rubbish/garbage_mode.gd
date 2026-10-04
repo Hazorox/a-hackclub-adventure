@@ -22,7 +22,6 @@ func start()->void:
 	Globals.objective.title = "rubbish"
 	Globals.objective.description = "Help clean up the event space"
 
-
 func spawn_items()->void:
 	# Add 10 rubbish items
 	for i in 10:
@@ -31,7 +30,8 @@ func spawn_items()->void:
 func player_chose(choice:int)->void:
 	# Choice 0 : Help ... Choice 1 : Ignore
 	if choice==0:
-		if Globals.garbage_mode_on:
+		# If gamemode is already on, or caffine mode, cancel
+		if Globals.garbage_mode_on or Globals.caffeine_on:
 			return
 		else:
 			# Spawn and start game mode
