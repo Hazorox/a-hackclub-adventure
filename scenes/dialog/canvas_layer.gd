@@ -35,8 +35,7 @@ func _process(delta: float) -> void:
 					"text": add_text(entry)
 					"choice": add_choice(entry)
 		STATE.READING:
-			get_tree().paused=true
-			if Input.is_action_just_pressed("interact"):
+			if Input.is_action_just_pressed("ui_accept"):
 				textbox.visible_ratio = 1.0
 				if tween and tween.is_running():
 					tween.stop()
@@ -44,7 +43,6 @@ func _process(delta: float) -> void:
 				end.text = "v"
 				change_state(STATE.DONE)
 		STATE.CHOOSING:
-			get_tree().paused=true
 			if Input.is_action_just_pressed("down"):
 				index = (index+1) % choices.size()
 				render_choices()
@@ -65,7 +63,6 @@ func hide_box():
 	end.text = ""
 	textbox.text = ""
 	sprite2d.hide()
-	get_tree().paused = false
 	
 func show_box():
 	cont.show()
@@ -135,7 +132,6 @@ func confirm_choice():
 	change_state(STATE.DONE)
 	if callback.is_valid():
 		callback.call(index)
-	get_tree().paused=false
 	return index
 	
 func _on_tween_finished():

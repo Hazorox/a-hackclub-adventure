@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://v3vgb04n0okn" path="res://assets/cat/normal_talking.png" id="1_sbv0p"]
 [ext_resource type="Script" uid="uid://cgwi6bvty6rkb" path="res://scenes/dialog/canvas_layer.gd" id="1_y7ilj"]
 [ext_resource type="FontFile" uid="uid://dskwk2qw2bidm" path="res://assets/fonts/Dedicool.ttf" id="2_sbv0p"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="2_yope6"]
 [ext_resource type="Script" uid="uid://dqpp4aggiwmol" path="res://scenes/dialog/sprite_2d.gd" id="4_yope6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7wsd"]
@@ -24,7 +25,7 @@ offset_right = 110.0
 offset_bottom = 280.0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.21960784, 0.07058824, 0.40392157, 1)
-theme_override_fonts/font = ExtResource("1_ey3e0")
+theme_override_fonts/font = ExtResource("2_yope6")
 theme_override_font_sizes/font_size = 48
 text = "Cat"
 

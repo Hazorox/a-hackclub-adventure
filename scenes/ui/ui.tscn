@@ -4,9 +4,24 @@
 [ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="1_u7n8c"]
 [ext_resource type="FontFile" uid="uid://4ubc6fen5ahe" path="res://assets/fonts/Pixel Game.otf" id="2_0dwhk"]
 [ext_resource type="Script" uid="uid://ia73vl6jxy0u" path="res://scenes/ui/continue.gd" id="3_0dwhk"]
+[ext_resource type="Texture2D" uid="uid://chcc3ycwimdnu" path="res://assets/heart.png" id="3_jcn1r"]
 [ext_resource type="Script" uid="uid://b5i78gckphjks" path="res://scenes/ui/restart.gd" id="4_pfayw"]
 [ext_resource type="Script" uid="uid://ct1x1fgk6eqe" path="res://scenes/ui/rubbish.gd" id="6_7vp6q"]
 [ext_resource type="Texture2D" uid="uid://5ietx3hi8h0c" path="res://assets/trash assets/banana.png" id="7_jcn1r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8t61q"]
+font = ExtResource("1_u7n8c")
+font_size = 64
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_0hvcy"]
+script/source = "extends Label
+
+
+func _process(_delta:float)->void:
+	text = str(Globals.friends)
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_g5kmx"]
 font = ExtResource("2_0dwhk")
@@ -136,16 +151,35 @@ script/source = "extends Label
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	text = str(Globals.rubbish_score) +\"/ 10\"
 "
 
 [node name="Ui" type="CanvasLayer" unique_id=579426520]
 script = ExtResource("1_g5kmx")
 
+[node name="friends_container" type="HSplitContainer" parent="." unique_id=943066935]
+offset_left = 1100.0
+offset_top = 6.0
+offset_right = 1269.0
+offset_bottom = 110.0
+dragging_enabled = false
+
+[node name="friends" type="Label" parent="friends_container" unique_id=1080213052]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_8t61q")
+script = SubResource("GDScript_0hvcy")
+
+[node name="TextureRect" type="TextureRect" parent="friends_container" unique_id=1944699875]
+layout_mode = 2
+texture = ExtResource("3_jcn1r")
+
 [node name="Label" type="Label" parent="." unique_id=1212009537]
-offset_right = 93.0
-offset_bottom = 23.0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 219.0
+offset_bottom = 62.0
 text = "OBJECTIVE : "
 label_settings = SubResource("LabelSettings_g5kmx")
 vertical_alignment = 1
