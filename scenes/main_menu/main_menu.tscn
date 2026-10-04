@@ -70,7 +70,7 @@ func _ready()->void:
 	pressed.connect(start)
 
 func start()->void:
-	get_tree().change_scene_to_file(\"res:://scenes/main_game/game.tscn\")
+	get_tree().change_scene_to_file(\"res://scenes/venue/venue.tscn\")
 "
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ebjn"]
@@ -128,7 +128,7 @@ corner_detail = 4
 [sub_resource type="GDScript" id="GDScript_0hvcy"]
 script/source = "extends Button
 var fullscreen :=false
-func on_opt_pressed()->void:
+func _on_opt_pressed()->void:
 	if fullscreen:
 		fullscreen = false
 		text = \"FULLSCREEN OFF\"
@@ -291,3 +291,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_tr8j5")
 theme_override_styles/focus = SubResource("StyleBoxFlat_8t61q")
 text = "LORE"
 script = ExtResource("7_5seab")
+
+[connection signal="pressed" from="vsplit/opt" to="vsplit/opt" method="_on_opt_pressed"]
