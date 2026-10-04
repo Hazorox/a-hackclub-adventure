@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
-@onready var notification:Label = $notify
+@onready var notification : Label = $notify
 @onready var audio:AudioStreamPlayer2D = $AudioStreamPlayer2D
 const SPEED = 200.0
 
