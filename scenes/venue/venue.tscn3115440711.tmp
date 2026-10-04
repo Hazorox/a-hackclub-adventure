@@ -12,10 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dyq4dosoaidih" path="res://scenes/characters/npc/npc.tscn" id="9_a0263"]
 [ext_resource type="PackedScene" uid="uid://cuymkwx4rxacg" path="res://scenes/gather_rubbish/GarbageMode.tscn" id="10_ae56i"]
 [ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="11_yuhmj"]
-[ext_resource type="PackedScene" uid="uid://bvomy02667opt" path="res://scenes/caffeine_mode/Caffeine Mode.tscn" id="12_qhtkb"]
-[ext_resource type="Script" uid="uid://cga7v2rupt8vi" path="res://scenes/caffeine_mode/caffeine_mode.gd" id="13_kl8nc"]
 [ext_resource type="PackedScene" uid="uid://o2nuarbirlio" path="res://scenes/ui/ui.tscn" id="13_tqqrh"]
 [ext_resource type="PackedScene" uid="uid://did26kwowqjgl" path="res://scenes/dialog/canvas_layer.tscn" id="14_2atwm"]
+[ext_resource type="PackedScene" uid="uid://bvomy02667opt" path="res://scenes/caffeine_mode/Caffeine Mode.tscn" id="15_hxsln"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1385,18 +1384,8 @@ func run(npc:CharacterBody2D,player:CharacterBody2D):
 		garbage_mode.start()
 "
 
-[sub_resource type="GDScript" id="GDScript_qhtkb"]
-script/source = "extends RefCounted
-
-func run(npc:CharacterBody2D,player:CharacterBody2D)->void:
-	var mode = npc.get_parent().get_node(\"CaffeineMode\")
-	if mode!=null:
-		mode.start()
-"
-
 [sub_resource type="GDScript" id="GDScript_nfrx5"]
 script/source = "extends RefCounted
-
 
 func run(npc:CharacterBody2D,player:CharacterBody2D):
 	var mode = npc.get_parent().get_node(\"CaffeineMode\")
@@ -1703,16 +1692,11 @@ npc_number = 26
 on_interact = SubResource("GDScript_yuhmj")
 
 [node name="Chris_Caffeine" parent="." unique_id=1776127735 instance=ExtResource("9_a0263")]
-position = Vector2(23, 262.5)
+position = Vector2(24.5, 71.5)
 npc_number = 16
-on_interact = SubResource("GDScript_qhtkb")
 once_near = SubResource("GDScript_nfrx5")
 
 [node name="GarbageMode" parent="." unique_id=1061071523 node_paths=PackedStringArray("dialog") instance=ExtResource("10_ae56i")]
-dialog = NodePath("../dialog")
-
-[node name="CaffeineMode" parent="." unique_id=1379787287 node_paths=PackedStringArray("dialog") instance=ExtResource("12_qhtkb")]
-script = ExtResource("13_kl8nc")
 dialog = NodePath("../dialog")
 
 [node name="Player" parent="." unique_id=1882750258 instance=ExtResource("11_yuhmj")]
@@ -1722,5 +1706,8 @@ scale = Vector2(1, 1)
 [node name="Ui" parent="." unique_id=579426520 instance=ExtResource("13_tqqrh")]
 
 [node name="dialog" parent="." unique_id=1600729092 instance=ExtResource("14_2atwm")]
+visible = false
 offset = Vector2(0, 432)
 transform = Transform2D(1, 0, 0, 1, 0, 432)
+
+[node name="CaffeineMode" parent="." unique_id=1379787287 instance=ExtResource("15_hxsln")]

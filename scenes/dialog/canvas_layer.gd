@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 					"text": add_text(entry)
 					"choice": add_choice(entry)
 		STATE.READING:
-			if Input.is_action_just_pressed("interact"):
+			if Input.is_action_just_pressed("ui_accept"):
 				textbox.visible_ratio = 1.0
 				if tween and tween.is_running():
 					tween.stop()
