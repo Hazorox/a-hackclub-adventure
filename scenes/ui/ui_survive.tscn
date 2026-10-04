@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://o2nuarbirlio"]
+
+[ext_resource type="FontFile" uid="uid://4ubc6fen5ahe" path="res://assets/fonts/Pixel Game.otf" id="2_0dwhk"]
+[ext_resource type="Script" uid="uid://njfd2b6d2v6b" path="res://scenes/ui/label_2.gd" id="3_fd3tj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5kmx"]
+font = ExtResource("2_0dwhk")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Ui" type="CanvasLayer" unique_id=579426520]
+
+[node name="Label" type="Label" parent="." unique_id=1212009537]
+offset_right = 93.0
+offset_bottom = 23.0
+text = "OBJECTIVE : SURVIVE"
+label_settings = SubResource("LabelSettings_g5kmx")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1210506790]
+offset_left = 20.0
+offset_top = 629.0
+offset_right = 135.0
+offset_bottom = 719.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_0dwhk")
+theme_override_font_sizes/font_size = 88
+text = "1:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_fd3tj")

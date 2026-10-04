@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://o2nuarbirlio"]
+[gd_scene format=3 uid="uid://cbkcjei6gqt1s"]
 
-[ext_resource type="Script" uid="uid://ds626nm1yq4n2" path="res://scenes/ui/ui.gd" id="1_g5kmx"]
-[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="1_u7n8c"]
-[ext_resource type="FontFile" uid="uid://4ubc6fen5ahe" path="res://assets/fonts/Pixel Game.otf" id="2_0dwhk"]
-[ext_resource type="Script" uid="uid://ia73vl6jxy0u" path="res://scenes/ui/continue.gd" id="3_0dwhk"]
-[ext_resource type="Script" uid="uid://b5i78gckphjks" path="res://scenes/ui/restart.gd" id="4_pfayw"]
-[ext_resource type="Script" uid="uid://ct1x1fgk6eqe" path="res://scenes/ui/rubbish.gd" id="6_7vp6q"]
-[ext_resource type="Texture2D" uid="uid://5ietx3hi8h0c" path="res://assets/trash assets/banana.png" id="7_jcn1r"]
+[ext_resource type="Script" uid="uid://ds626nm1yq4n2" path="res://scenes/ui/ui.gd" id="1_kcbom"]
+[ext_resource type="FontFile" uid="uid://4ubc6fen5ahe" path="res://assets/fonts/Pixel Game.otf" id="2_cvr1o"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="3_uwcvk"]
+[ext_resource type="Script" uid="uid://ia73vl6jxy0u" path="res://scenes/ui/continue.gd" id="4_5yuys"]
+[ext_resource type="Script" uid="uid://b5i78gckphjks" path="res://scenes/ui/restart.gd" id="5_itprt"]
+[ext_resource type="Script" uid="uid://ct1x1fgk6eqe" path="res://scenes/ui/rubbish.gd" id="6_8krmc"]
+[ext_resource type="Texture2D" uid="uid://5ietx3hi8h0c" path="res://assets/trash assets/banana.png" id="7_wq8jk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_g5kmx"]
-font = ExtResource("2_0dwhk")
+font = ExtResource("2_cvr1o")
 font_size = 48
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
-font = ExtResource("1_u7n8c")
+font = ExtResource("3_uwcvk")
 font_size = 48
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqeha"]
@@ -120,13 +120,13 @@ func on_opt_pressed()->void:
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
-font = ExtResource("2_0dwhk")
+font = ExtResource("2_cvr1o")
 font_size = 48
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_tr8j5"]
-font = ExtResource("1_u7n8c")
+font = ExtResource("3_uwcvk")
 font_size = 48
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
@@ -141,7 +141,7 @@ func _process(delta: float) -> void:
 "
 
 [node name="Ui" type="CanvasLayer" unique_id=579426520]
-script = ExtResource("1_g5kmx")
+script = ExtResource("1_kcbom")
 
 [node name="Label" type="Label" parent="." unique_id=1212009537]
 offset_right = 93.0
@@ -216,27 +216,27 @@ dragging_enabled = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_u7n8c")
+theme_override_fonts/font = ExtResource("3_uwcvk")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_uqeha")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5seab")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wem23")
 theme_override_styles/focus = SubResource("StyleBoxFlat_3ovsr")
 text = "Continue"
-script = ExtResource("3_0dwhk")
+script = ExtResource("4_5yuys")
 
 [node name="restart" type="Button" parent="escape/VSplitContainer/HSplitContainer" unique_id=1083885461]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_u7n8c")
+theme_override_fonts/font = ExtResource("3_uwcvk")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_7vp6q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jcn1r")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uegxj")
 theme_override_styles/focus = SubResource("StyleBoxFlat_y220t")
 text = "RESTART"
-script = ExtResource("4_pfayw")
+script = ExtResource("5_itprt")
 
 [node name="opt" type="Button" parent="escape/VSplitContainer" unique_id=290379005]
 layout_mode = 2
@@ -246,7 +246,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(0.76117325, 0.87597364, 0.9884402, 1)
 theme_override_colors/font_pressed_color = Color(0.5120767, 0.74876285, 0.9726141, 1)
 theme_override_colors/font_hover_color = Color(0.5137255, 0.7490196, 0.972549, 1)
-theme_override_fonts/font = ExtResource("1_u7n8c")
+theme_override_fonts/font = ExtResource("3_uwcvk")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_4kltc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hl07w")
@@ -260,7 +260,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("6_7vp6q")
+script = ExtResource("6_8krmc")
 
 [node name="hands_trash" type="Label" parent="rubbish" unique_id=1249433141]
 layout_mode = 0
@@ -279,7 +279,7 @@ offset_top = 640.0
 offset_right = 40.0
 offset_bottom = 680.0
 scale = Vector2(2, 2)
-texture = ExtResource("7_jcn1r")
+texture = ExtResource("7_wq8jk")
 
 [node name="Label2" type="Label" parent="rubbish" unique_id=1872778826]
 layout_mode = 0
