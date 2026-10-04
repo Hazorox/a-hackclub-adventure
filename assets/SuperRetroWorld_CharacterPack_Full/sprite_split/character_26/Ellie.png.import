@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgewr3u4y5yre"
-path="res://.godot/imported/person004.png-29d873ac29761b2343cb787fb38a3da1.ctex"
+uid="uid://dh2pk8u5hxrpb"
+path="res://.godot/imported/Ellie.png-b1c14c26d0b160ef7b3c43122f6f2ee0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pixel people/person004.png"
-dest_files=["res://.godot/imported/person004.png-29d873ac29761b2343cb787fb38a3da1.ctex"]
+source_file="res://assets/SuperRetroWorld_CharacterPack_Full/sprite_split/character_26/Ellie.png"
+dest_files=["res://.godot/imported/Ellie.png-b1c14c26d0b160ef7b3c43122f6f2ee0.ctex"]
 
 [params]
 
