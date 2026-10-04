@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cuymkwx4rxacg" path="res://scenes/gather_rubbish/GarbageMode.tscn" id="10_ae56i"]
 [ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="11_yuhmj"]
 [ext_resource type="PackedScene" uid="uid://o2nuarbirlio" path="res://scenes/ui/ui.tscn" id="13_tqqrh"]
+[ext_resource type="PackedScene" uid="uid://did26kwowqjgl" path="res://scenes/dialog/canvas_layer.tscn" id="14_2atwm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1490,27 +1491,30 @@ position = Vector2(461, 351)
 position = Vector2(-412.9375, -312)
 shape = SubResource("RectangleShape2D_yuhmj")
 
-[node name="trash_4" type="Area2D" parent="Collisions" unique_id=1708991229 groups=["trash_bin"]]
+[node name="trash_4" type="Area2D" parent="Collisions" unique_id=1708991229 node_paths=PackedStringArray("npc_to_remove") groups=["trash_bin"]]
 position = Vector2(468, 351)
 script = ExtResource("9_231yp")
+npc_to_remove = NodePath("../../Ellie_rubbish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/trash_4" unique_id=979933992]
 position = Vector2(-220.50002, -13.999999)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_231yp")
 
-[node name="trash_2" type="Area2D" parent="Collisions" unique_id=860451978 groups=["trash_bin"]]
+[node name="trash_2" type="Area2D" parent="Collisions" unique_id=860451978 node_paths=PackedStringArray("npc_to_remove") groups=["trash_bin"]]
 position = Vector2(781, 350)
 script = ExtResource("9_231yp")
+npc_to_remove = NodePath("../../Ellie_rubbish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/trash_2" unique_id=720322027]
 position = Vector2(-389.50003, -326.00003)
 scale = Vector2(2.5, 2.5)
 shape = SubResource("RectangleShape2D_231yp")
 
-[node name="trash_3" type="Area2D" parent="Collisions" unique_id=1856588139 groups=["trash_bin"]]
+[node name="trash_3" type="Area2D" parent="Collisions" unique_id=1856588139 node_paths=PackedStringArray("npc_to_remove") groups=["trash_bin"]]
 position = Vector2(877, 350)
 script = ExtResource("9_231yp")
+npc_to_remove = NodePath("../../Ellie_rubbish")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/trash_3" unique_id=1966729958]
 position = Vector2(-388.50003, -331.5)
@@ -1671,16 +1675,21 @@ position = Vector2(927, 554)
 position = Vector2(-460, -241)
 shape = SubResource("RectangleShape2D_qhtkb")
 
-[node name="Ellie_rubbish" parent="." unique_id=2062938148 instance=ExtResource("9_a0263")]
+[node name="Ellie_rubbish" parent="." unique_id=2062938148 groups=["npc_rubbish"] instance=ExtResource("9_a0263")]
 position = Vector2(558.5, 73.5)
 scale = Vector2(1, 1)
 npc_number = 26
 on_interact = SubResource("GDScript_yuhmj")
 
-[node name="GarbageMode" parent="." unique_id=1061071523 instance=ExtResource("10_ae56i")]
+[node name="GarbageMode" parent="." unique_id=1061071523 node_paths=PackedStringArray("dialog") instance=ExtResource("10_ae56i")]
+dialog = NodePath("../dialog")
 
 [node name="Player" parent="." unique_id=1882750258 instance=ExtResource("11_yuhmj")]
 position = Vector2(247, 162)
 scale = Vector2(1, 1)
 
 [node name="Ui" parent="." unique_id=579426520 instance=ExtResource("13_tqqrh")]
+
+[node name="dialog" parent="." unique_id=1600729092 instance=ExtResource("14_2atwm")]
+offset = Vector2(0, 432)
+transform = Transform2D(1, 0, 0, 1, 0, 432)
