@@ -72,32 +72,13 @@ grow_vertical = 2
 theme_override_constants/margin_bottom = 600
 
 [node name="Title" type="Label" parent="MarginContainer" unique_id=909655878]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.25882354, 0.41568628, 1)
 theme_override_fonts/font = ExtResource("1_a3153")
 theme_override_font_sizes/font_size = 64
 text = "You've lost to a bug T_T"
 horizontal_alignment = 1
-
-[node name="Restart" type="Button" parent="." unique_id=525293210]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -138.0
-offset_top = -42.0
-offset_right = 146.0
-offset_bottom = 42.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_a3153")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxFlat_onkbk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6c0c3")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ad8vj")
-text = " Restart"
 
 [node name="Exit" type="Button" parent="." unique_id=1008206413]
 layout_mode = 1
@@ -125,6 +106,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -177,10 +162,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 59.0
-offset_top = 297.0
-offset_right = -953.1
-offset_bottom = -289.1
+offset_left = 88.0
+offset_top = 295.0
+offset_right = -924.1
+offset_bottom = -291.1
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.5235988

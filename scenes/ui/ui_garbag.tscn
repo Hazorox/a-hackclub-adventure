@@ -1,0 +1,294 @@
+[gd_scene format=3 uid="uid://cbkcjei6gqt1s"]
+
+[ext_resource type="Script" uid="uid://ds626nm1yq4n2" path="res://scenes/ui/ui.gd" id="1_kcbom"]
+[ext_resource type="FontFile" uid="uid://4ubc6fen5ahe" path="res://assets/fonts/Pixel Game.otf" id="2_cvr1o"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="3_uwcvk"]
+[ext_resource type="Script" uid="uid://ia73vl6jxy0u" path="res://scenes/ui/continue.gd" id="4_5yuys"]
+[ext_resource type="Script" uid="uid://b5i78gckphjks" path="res://scenes/ui/restart.gd" id="5_itprt"]
+[ext_resource type="Script" uid="uid://ct1x1fgk6eqe" path="res://scenes/ui/rubbish.gd" id="6_8krmc"]
+[ext_resource type="Texture2D" uid="uid://5ietx3hi8h0c" path="res://assets/trash assets/banana.png" id="7_wq8jk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g5kmx"]
+font = ExtResource("2_cvr1o")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_nfrx5"]
+script/source = "extends Label
+
+func _process(delta: float) -> void:
+	text = \"OBJECTIVE : \" + Globals.objective.description
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
+font = ExtResource("3_uwcvk")
+font_size = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqeha"]
+bg_color = Color(0.94509804, 0.76862746, 0.05882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5seab"]
+bg_color = Color(0.7101669, 0.5737887, 0.01862121, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wem23"]
+bg_color = Color(0.8458436, 0.6860854, 0.026511572, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ovsr"]
+bg_color = Color(0.84705883, 0.6862745, 0.02745098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vp6q"]
+bg_color = Color(0.93333334, 0.27450982, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcn1r"]
+bg_color = Color(0.692934, 0.1402395, 0.18218505, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uegxj"]
+bg_color = Color(0.87088686, 0.21482033, 0.25499722, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y220t"]
+bg_color = Color(0.87058824, 0.21568628, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kltc"]
+bg_color = Color(0.2, 0.5568628, 0.85490197, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.07956133, 0.35737598, 0.5758758, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl07w"]
+bg_color = Color(0.31962577, 0.6453004, 0.9347979, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.12324823, 0.45567477, 0.72137153, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swkix"]
+bg_color = Color(0.16328335, 0.5162796, 0.8049645, 1)
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color(0.10161323, 0.4119751, 0.65784943, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hc5d0"]
+bg_color = Color(0.16470589, 0.5176471, 0.8039216, 1)
+border_color = Color(0.09987382, 0.4080385, 0.6520149, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 4
+
+[sub_resource type="GDScript" id="GDScript_n3vwu"]
+script/source = "extends Button
+var fullscreen :=false
+
+func _ready()->void:
+	pressed.connect(on_opt_pressed)
+
+func on_opt_pressed()->void:
+	if fullscreen:
+		fullscreen = false
+		text = \"FULLSCREEN OFF\"
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		fullscreen = true
+		text = \"FULLSCREEN ON\"
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
+font = ExtResource("2_cvr1o")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tr8j5"]
+font = ExtResource("3_uwcvk")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_8t61q"]
+script/source = "extends Label
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = str(Globals.rubbish_score) +\"/ 10\"
+"
+
+[node name="Ui" type="CanvasLayer" unique_id=579426520]
+script = ExtResource("1_kcbom")
+
+[node name="Label" type="Label" parent="." unique_id=1212009537]
+offset_right = 93.0
+offset_bottom = 23.0
+text = "OBJECTIVE : "
+label_settings = SubResource("LabelSettings_g5kmx")
+vertical_alignment = 1
+script = SubResource("GDScript_nfrx5")
+
+[node name="escape" type="Control" parent="." unique_id=1356124]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="escape" unique_id=643548478]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.5
+offset_top = -222.0
+offset_right = 272.5
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME PAUSED"
+label_settings = SubResource("LabelSettings_nfrx5")
+
+[node name="canvas" type="CanvasLayer" parent="escape" unique_id=1098010748]
+layer = -1
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="escape/canvas" unique_id=1981329035]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3764706)
+
+[node name="VSplitContainer" type="VSplitContainer" parent="escape" unique_id=1931101928]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -20.0
+offset_right = 375.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 86
+split_offsets = PackedInt32Array(-26)
+dragging_enabled = false
+split_offset = -26
+
+[node name="HSplitContainer" type="HSplitContainer" parent="escape/VSplitContainer" unique_id=647273072]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 172
+dragging_enabled = false
+
+[node name="continue" type="Button" parent="escape/VSplitContainer/HSplitContainer" unique_id=658808992]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uwcvk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_uqeha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5seab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wem23")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3ovsr")
+text = "Continue"
+script = ExtResource("4_5yuys")
+
+[node name="restart" type="Button" parent="escape/VSplitContainer/HSplitContainer" unique_id=1083885461]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_uwcvk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vp6q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jcn1r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uegxj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_y220t")
+text = "RESTART"
+script = ExtResource("5_itprt")
+
+[node name="opt" type="Button" parent="escape/VSplitContainer" unique_id=290379005]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.76117325, 0.87597364, 0.9884402, 1)
+theme_override_colors/font_pressed_color = Color(0.5120767, 0.74876285, 0.9726141, 1)
+theme_override_colors/font_hover_color = Color(0.5137255, 0.7490196, 0.972549, 1)
+theme_override_fonts/font = ExtResource("3_uwcvk")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_4kltc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hl07w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_swkix")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hc5d0")
+text = "FULLSCREEN OFF"
+script = SubResource("GDScript_n3vwu")
+
+[node name="rubbish" type="Control" parent="." unique_id=872220897]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_8krmc")
+
+[node name="hands_trash" type="Label" parent="rubbish" unique_id=1249433141]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 653.0
+offset_right = 441.0
+offset_bottom = 719.0
+text = "Hands Occupied"
+label_settings = SubResource("LabelSettings_0hvcy")
+vertical_alignment = 1
+
+[node name="canvas" type="CanvasLayer" parent="rubbish" unique_id=1757426440]
+
+[node name="rubbishIcon" type="TextureRect" parent="rubbish/canvas" unique_id=733306776]
+offset_top = 640.0
+offset_right = 40.0
+offset_bottom = 680.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_wq8jk")
+
+[node name="Label2" type="Label" parent="rubbish" unique_id=1872778826]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 616.0
+offset_right = 1280.0
+offset_bottom = 720.0
+text = "0 / 10"
+label_settings = SubResource("LabelSettings_tr8j5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = SubResource("GDScript_8t61q")

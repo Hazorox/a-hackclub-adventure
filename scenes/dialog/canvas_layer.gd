@@ -26,9 +26,6 @@ func _ready() -> void:
 	hide_box()
 	print("ready")
 	process_mode = Node.PROCESS_MODE_ALWAYS
-	queue_text("LOTFY, I BEG U, PLZ LEARN WEB", "res://assets/cat/angry_talking.png", "angry cat", "res://assets/cat/cat_soundbeeps.wav")
-	queue_choice(["learn web", "learn web dev", "die"], "res://assets/cat/playful_talking.png", "cat")
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	match current:
@@ -39,7 +36,8 @@ func _process(delta: float) -> void:
 					"text": add_text(entry)
 					"choice": add_choice(entry)
 		STATE.READING:
-			if Input.is_action_just_pressed("ui_accept"):
+			get_tree().paused=true
+			if Input.is_action_just_pressed("interact"):
 				textbox.visible_ratio = 1.0
 				if tween and tween.is_running():
 					tween.stop()
@@ -47,6 +45,7 @@ func _process(delta: float) -> void:
 				end.text = "v"
 				change_state(STATE.DONE)
 		STATE.CHOOSING:
+			get_tree().paused=true
 			if Input.is_action_just_pressed("down"):
 				index = (index+1) % choices.size()
 				render_choices()
@@ -137,6 +136,7 @@ func confirm_choice():
 	change_state(STATE.DONE)
 	if callback.is_valid():
 		callback.call(index)
+	get_tree().paused=false
 	return index
 	
 func _on_tween_finished():
