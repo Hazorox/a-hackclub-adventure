@@ -13,4 +13,6 @@ func on_body_entered(body:Node2D)->void:
 			if npc_to_remove != null:
 				Globals.objective.topic ="wander"
 				Globals.objective.description = "Wander Around !!"
+				Globals.garbage_mode_on=false
+				Globals.friends +=1
 				npc_to_remove.queue_free()
