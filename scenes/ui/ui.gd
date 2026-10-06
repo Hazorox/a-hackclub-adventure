@@ -1,6 +1,6 @@
 extends CanvasLayer
 @onready var escape:Control = $escape
-@onready var escape_canvas:CanvasLayer = $escape/canvas
+@onready var escape_canvas:ColorRect = $escape/ColorRect
 func _ready()->void:
 	process_mode=Node.PROCESS_MODE_ALWAYS
 

@@ -1,12 +1,28 @@
 [gd_scene format=3 uid="uid://cbkcjei6gqt1s"]
 
-[ext_resource type="Script" uid="uid://ds626nm1yq4n2" path="res://scenes/ui/ui.gd" id="1_kcbom"]
-[ext_resource type="FontFile" uid="uid://4ubc6fen5ahe" path="res://assets/fonts/Pixel Game.otf" id="2_cvr1o"]
-[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="3_uwcvk"]
-[ext_resource type="Script" uid="uid://ia73vl6jxy0u" path="res://scenes/ui/continue.gd" id="4_5yuys"]
-[ext_resource type="Script" uid="uid://b5i78gckphjks" path="res://scenes/ui/restart.gd" id="5_itprt"]
-[ext_resource type="Script" uid="uid://ct1x1fgk6eqe" path="res://scenes/ui/rubbish.gd" id="6_8krmc"]
-[ext_resource type="Texture2D" uid="uid://5ietx3hi8h0c" path="res://assets/trash assets/banana.png" id="7_wq8jk"]
+[ext_resource type="Script" uid="uid://ds626nm1yq4n2" path="res://scenes/ui/ui.gd" id="1_g5kmx"]
+[ext_resource type="FontFile" uid="uid://75rknm8ry731" path="res://assets/fonts/title.otf" id="1_u7n8c"]
+[ext_resource type="FontFile" uid="uid://4ubc6fen5ahe" path="res://assets/fonts/Pixel Game.otf" id="2_0dwhk"]
+[ext_resource type="Script" uid="uid://ia73vl6jxy0u" path="res://scenes/ui/continue.gd" id="3_0dwhk"]
+[ext_resource type="Texture2D" uid="uid://chcc3ycwimdnu" path="res://assets/heart.png" id="3_jcn1r"]
+[ext_resource type="Script" uid="uid://b5i78gckphjks" path="res://scenes/ui/restart.gd" id="4_pfayw"]
+[ext_resource type="Script" uid="uid://ct1x1fgk6eqe" path="res://scenes/ui/rubbish.gd" id="6_7vp6q"]
+[ext_resource type="Texture2D" uid="uid://5ietx3hi8h0c" path="res://assets/trash assets/banana.png" id="7_jcn1r"]
+[ext_resource type="Texture2D" uid="uid://bipt8hrssntl3" path="res://assets/coffee.png" id="9_uegxj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8t61q"]
+font = ExtResource("1_u7n8c")
+font_size = 64
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_0hvcy"]
+script/source = "extends Label
+
+
+func _process(_delta:float)->void:
+	text = str(Globals.friends)
+"
 
 [sub_resource type="LabelSettings" id="LabelSettings_g5kmx"]
 font = ExtResource("2_cvr1o")
@@ -19,6 +35,45 @@ script/source = "extends Label
 
 func _process(delta: float) -> void:
 	text = \"OBJECTIVE : \" + Globals.objective.description
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_0hvcy"]
+font = ExtResource("2_0dwhk")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tr8j5"]
+font = ExtResource("1_u7n8c")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_8t61q"]
+script/source = "extends Label
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	text = str(Globals.rubbish_score) +\"/ 10\"
+"
+
+[sub_resource type="GDScript" id="GDScript_y220t"]
+script/source = "extends Control
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	visible = Globals.caffeine_in_time
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_l2nlq"]
+
+[sub_resource type="GDScript" id="GDScript_tr8j5"]
+script/source = "extends Label
+
+
+func _process(_delta:float)->void:
+	text = str(Globals.caffeine_time) + \" Seconds Left\"
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
@@ -136,20 +191,106 @@ script/source = "extends Label
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	text = str(Globals.rubbish_score) +\"/ 10\"
 "
 
 [node name="Ui" type="CanvasLayer" unique_id=579426520]
-script = ExtResource("1_kcbom")
+script = ExtResource("1_g5kmx")
+
+[node name="friends_container" type="HSplitContainer" parent="." unique_id=943066935]
+offset_left = 1100.0
+offset_top = 6.0
+offset_right = 1269.0
+offset_bottom = 110.0
+dragging_enabled = false
+
+[node name="friends" type="Label" parent="friends_container" unique_id=1080213052]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_8t61q")
+script = SubResource("GDScript_0hvcy")
+
+[node name="TextureRect" type="TextureRect" parent="friends_container" unique_id=1944699875]
+layout_mode = 2
+texture = ExtResource("3_jcn1r")
 
 [node name="Label" type="Label" parent="." unique_id=1212009537]
-offset_right = 93.0
-offset_bottom = 23.0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 219.0
+offset_bottom = 62.0
 text = "OBJECTIVE : "
 label_settings = SubResource("LabelSettings_g5kmx")
 vertical_alignment = 1
 script = SubResource("GDScript_nfrx5")
+
+[node name="rubbish" type="Control" parent="." unique_id=872220897]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_7vp6q")
+
+[node name="hands_trash" type="Label" parent="rubbish" unique_id=1249433141]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 653.0
+offset_right = 441.0
+offset_bottom = 719.0
+text = "Hands Occupied"
+label_settings = SubResource("LabelSettings_0hvcy")
+vertical_alignment = 1
+
+[node name="canvas" type="CanvasLayer" parent="rubbish" unique_id=1757426440]
+
+[node name="rubbishIcon" type="TextureRect" parent="rubbish/canvas" unique_id=733306776]
+offset_top = 640.0
+offset_right = 40.0
+offset_bottom = 680.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_jcn1r")
+
+[node name="Label2" type="Label" parent="rubbish" unique_id=1872778826]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 616.0
+offset_right = 1280.0
+offset_bottom = 720.0
+text = "0 / 10"
+label_settings = SubResource("LabelSettings_tr8j5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = SubResource("GDScript_8t61q")
+
+[node name="caffeine" type="Control" parent="." unique_id=851909917]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 6.0
+offset_top = 659.0
+offset_right = 353.0
+offset_bottom = 711.0
+script = SubResource("GDScript_y220t")
+
+[node name="Label" type="Label" parent="caffeine" unique_id=1907651896]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 16.0
+offset_right = 195.0
+offset_bottom = 39.0
+text = "8 SECONDS LEFT"
+label_settings = SubResource("LabelSettings_l2nlq")
+script = SubResource("GDScript_tr8j5")
+
+[node name="TextureRect" type="TextureRect" parent="caffeine" unique_id=1558537559]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -11.0
+offset_right = 79.0
+offset_bottom = 55.0
+texture = ExtResource("9_uegxj")
+expand_mode = 1
 
 [node name="escape" type="Control" parent="." unique_id=1356124]
 visible = false
@@ -159,6 +300,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="escape" unique_id=1981329035]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3764706)
 
 [node name="Label" type="Label" parent="escape" unique_id=643548478]
 layout_mode = 1
@@ -175,18 +325,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "GAME PAUSED"
 label_settings = SubResource("LabelSettings_nfrx5")
-
-[node name="canvas" type="CanvasLayer" parent="escape" unique_id=1098010748]
-layer = -1
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="escape/canvas" unique_id=1981329035]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.3764706)
 
 [node name="VSplitContainer" type="VSplitContainer" parent="escape" unique_id=1931101928]
 layout_mode = 1
