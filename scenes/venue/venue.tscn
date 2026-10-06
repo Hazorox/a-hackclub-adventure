@@ -12,10 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://dyq4dosoaidih" path="res://scenes/characters/npc/npc.tscn" id="9_a0263"]
 [ext_resource type="PackedScene" uid="uid://cuymkwx4rxacg" path="res://scenes/gather_rubbish/GarbageMode.tscn" id="10_ae56i"]
 [ext_resource type="PackedScene" uid="uid://c4wvn1wxqow3q" path="res://scenes/characters/player/player.tscn" id="11_yuhmj"]
-[ext_resource type="PackedScene" uid="uid://o2nuarbirlio" path="res://scenes/ui/ui_survive.tscn" id="13_tqqrh"]
 [ext_resource type="PackedScene" uid="uid://cujocc6edectd" path="res://scenes/cat/cat.tscn" id="14_2atwm"]
 [ext_resource type="Script" uid="uid://dyq283ahcnrx" path="res://scenes/venue/debugging_mode.gd" id="15_hxsln"]
 [ext_resource type="Script" uid="uid://bgrqlmxasa87k" path="res://scenes/venue/rhythm_mode.gd" id="16_qhtkb"]
+[ext_resource type="PackedScene" uid="uid://cbb4cib7n3fjn" path="res://scenes/ui/ui.tscn" id="17_7p8sd"]
+[ext_resource type="PackedScene" uid="uid://did26kwowqjgl" path="res://scenes/dialog/canvas_layer.tscn" id="17_kl8nc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ae56i"]
 texture = ExtResource("1_84xi6")
@@ -1479,8 +1480,6 @@ on_interact = SubResource("GDScript_hxsln")
 position = Vector2(247, 162)
 scale = Vector2(1, 1)
 
-[node name="Ui" parent="." unique_id=579426520 instance=ExtResource("13_tqqrh")]
-
 [node name="Cat" parent="." unique_id=1754609012 node_paths=PackedStringArray("target") instance=ExtResource("14_2atwm")]
 position = Vector2(251, 199)
 target = NodePath("../Player")
@@ -1812,10 +1811,15 @@ collision_mask = 3
 position = Vector2(-460, -241)
 shape = SubResource("RectangleShape2D_qhtkb")
 
-[node name="GarbageMode" parent="." unique_id=1061071523 instance=ExtResource("10_ae56i")]
+[node name="GarbageMode" parent="." unique_id=1061071523 node_paths=PackedStringArray("dialog") instance=ExtResource("10_ae56i")]
+dialog = NodePath("../CanvasLayer")
 
 [node name="DebuggingMode" type="Node2D" parent="." unique_id=1494169214]
 script = ExtResource("15_hxsln")
 
 [node name="RhythmMode" type="Node2D" parent="." unique_id=1175701009]
 script = ExtResource("16_qhtkb")
+
+[node name="CanvasLayer" parent="." unique_id=1600729092 instance=ExtResource("17_kl8nc")]
+
+[node name="Ui" parent="." unique_id=579426520 instance=ExtResource("17_7p8sd")]
